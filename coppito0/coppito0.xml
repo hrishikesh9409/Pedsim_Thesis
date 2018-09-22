@@ -1,0 +1,139 @@
+<welcome>
+
+  <!-- waypoints - define before the agents! -->
+  <waypoint id="wu" x="0" y="-100" r="50" />
+  <waypoint id="wd" x="0" y=" 100" r="50" />
+  <waypoint id="wl" x="-100" y="0" r="50" />
+  <waypoint id="wr" x=" 100" y="0" r="50" />
+
+  <!-- agents -->
+  <agent x="0" y="0" n="100" dx="90" dy="90">
+	 <addwaypoint id="wu" />
+	 <addwaypoint id="wd" />
+  </agent>
+
+  <agent x="0" y="0" n="100" dx="90" dy="90">
+	 <addwaypoint id="wl" />
+	 <addwaypoint id="wr" />
+  </agent>
+
+  <!-- walls -->
+
+  <!-- TOP SIDE -->
+  <obstacle x1="-120" y1="-90" x2="-7.5" y2="-90" />
+  <obstacle x1="-7.5" y1="-90" x2="-7.5" y2="-60" />
+  <obstacle x1="-7.5" y1="-60" x2="7.5" y2="-60" />
+  <obstacle x1="7.5" y1="-60" x2="12.5" y2="-60" />
+  <obstacle x1="17.5" y1="-60" x2="30" y2="-60" />
+  <obstacle x1="30" y1="-60" x2="30" y2="-90" />
+  <obstacle x1="30" y1="-90" x2="120" y2="-90" />
+
+  <!-- RIGHT SIDE -->
+  <obstacle x1="120" y1="-90" x2="120" y2="-15" />
+  <obstacle x1="120" y1="-15" x2="102.5" y2="-15" />
+  <obstacle x1="97.5" y1="-15" x2="97.5" y2="75" />
+
+  <!-- BOTTOM SIDE -->
+  <obstacle x1="97.5" y1="75" x2="7.5" y2="75" />
+  <obstacle x1="7.5" y1="75" x2="2.5" y2="75" />
+  <obstacle x1="-2.5" y1="75" x2="-7.5" y2="75" />
+  <obstacle x1="-7.5" y1="75" x2="-97.5" y2="75" />
+  <obstacle x1="-97.5" y1="75" x2="-97.5" y2="90" />
+  <obstacle x1="-97.5" y1="90" x2="-135" y2="90" />
+
+
+  <!-- LEFT SIDE -->
+  <obstacle x1="-135" y1="90" x2="-135" y2="-30" />
+  <obstacle x1="-135" y1="-30" x2="-112.5" y2="-30" />
+  <obstacle x1="-120" y1="-35" x2="-120" y2="-90" />
+
+
+  <!-- INTERNAL BUILDING WALLS/ROOMS -->
+  <!-- TOP SIDE -->
+  <obstacle x1="-97.5" y1="-90" x2="-97.5" y2="-60" />
+  <obstacle x1="-75" y1="-90" x2="-75" y2="-60" />
+  <obstacle x1="-52.5" y1="-90" x2="-52.5" y2="-60" />
+  <obstacle x1="-30" y1="-90" x2="-30" y2="-60" />
+
+  <obstacle x1="52.5" y1="-90" x2="52.5" y2="-60" />
+  <obstacle x1="75" y1="-90" x2="75" y2="-60" />
+  <obstacle x1="97.5" y1="-90" x2="97.5" y2="-60" />
+
+  <obstacle x1="-120" y1="-60" x2="-102.5" y2="-60" />
+  <obstacle x1="-92.5" y1="-60" x2="-66.25" y2="-60" />
+  <obstacle x1="-61.25" y1="-60" x2="-52.5" y2="-60" />
+  <obstacle x1="-52.5" y1="-60" x2="-35" y2="-60" />
+  <obstacle x1="-30" y1="-60" x2="-12.5" y2="-60" />
+
+  <obstacle x1="30" y1="-60" x2="38.75" y2="-60" />
+  <obstacle x1="43.75" y1="-60" x2="52.5" y2="-60" />
+  <obstacle x1="52.5" y1="-60" x2="70" y2="-60" />
+  <obstacle x1="75" y1="-60" x2="80" y2="-60" />
+  <obstacle x1="85" y1="-60" x2="97.5" y2="-60" />
+  <obstacle x1="97.5" y1="-60" x2="102.5" y2="-60" />
+  <obstacle x1="107.5" y1="-60" x2="120" y2="-60" />
+
+
+  <!-- MID SECTION -->
+  <obstacle x1="-97.5" y1="-45" x2="-7.5" y2="-45" />
+  <obstacle x1="-7.5" y1="-45" x2="-7.5" y2="-15" />
+  <obstacle x1="-7.5" y1="-45" x2="-7.5" y2="-5" />
+  <obstacle x1="-97.5" y1="-45" x2="-97.5" y2="30" />
+  <obstacle x1="-97.5" y1="0" x2="-7.5" y2="0" />
+
+  <obstacle x1="-52.5" y1="-45" x2="-52.5" y2="-5" />
+
+  <obstacle x1="-75" y1="0" x2="-75" y2="30" />
+  <obstacle x1="-52.5" y1="0" x2="-52.5" y2="30" />
+  <obstacle x1="-30" y1="0" x2="-30" y2="30" />
+  <obstacle x1="-7.5" y1="0" x2="-7.5" y2="30" />
+
+  <obstacle x1="-7.5" y1="30" x2="-25" y2="30" />
+  <obstacle x1="-30" y1="30" x2="-47.5" y2="30" />
+  <obstacle x1="-52.5" y1="30" x2="-70" y2="30" />
+  <obstacle x1="-75" y1="30" x2="-92.5" y2="30" />
+
+  <obstacle x1="7.5" y1="0" x2="97.5" y2="0" />
+  <obstacle x1="7.5" y1="0" x2="7.5" y2="30" />
+  <obstacle x1="30" y1="0" x2="30" y2="30" />
+  <obstacle x1="52.5" y1="0" x2="52.5" y2="35" />
+
+  <obstacle x1="52.5" y1="30" x2="35" y2="30" />
+  <obstacle x1="30" y1="30" x2="12.5" y2="30" />
+
+  <obstacle x1="97.5" y1="0" x2="97.5" y2="-30" />
+  <obstacle x1="92.5" y1="-30" x2="75.5" y2="-30" />
+  <obstacle x1="75.5" y1="-30" x2="75.5" y2="0" />
+
+  
+  <!-- BOTTOM SECTION -->
+  <obstacle x1="-97.5" y1="45" x2="-97.5" y2="75" />
+  <obstacle x1="-75" y1="45" x2="-75" y2="75" />
+  <obstacle x1="-52.5" y1="45" x2="-52.5" y2="75" />
+  <obstacle x1="-30" y1="45" x2="-30" y2="75" />
+  <obstacle x1="-7.5" y1="45" x2="-7.5" y2="75" />
+  <obstacle x1="7.5" y1="45" x2="7.5" y2="75" />
+  <obstacle x1="30" y1="45" x2="30" y2="75" />
+  <obstacle x1="52.5" y1="40" x2="52.5" y2="75" />
+
+  <obstacle x1="52.5" y1="45" x2="35" y2="45" />
+  <obstacle x1="30" y1="45" x2="12.5" y2="45" />
+  <obstacle x1="-7.5" y1="45" x2="-25" y2="45" />
+  <obstacle x1="-30" y1="45" x2="-47.5" y2="45" />
+  <obstacle x1="-52.5" y1="45" x2="-70" y2="45" />
+  <obstacle x1="-75" y1="45" x2="-92.5" y2="45" />
+
+  <!-- LEFT SIDE SECTION -->
+  <obstacle x1="-135" y1="0" x2="-112.5" y2="0" />
+  <obstacle x1="-135" y1="30" x2="-112.5" y2="30" />
+  <obstacle x1="-135" y1="60" x2="-112.5" y2="60" />
+
+  <obstacle x1="-112.5" y1="90" x2="-112.5" y2="80" />
+  <obstacle x1="-112.5" y1="75" x2="-112.5" y2="60" />
+  <obstacle x1="-112.5" y1="60" x2="-112.5" y2="50" />
+  <obstacle x1="-112.5" y1="45" x2="-112.5" y2="30" />
+  <obstacle x1="-112.5" y1="30" x2="-112.5" y2="20" />
+  <obstacle x1="-112.5" y1="15" x2="-112.5" y2="0" />
+  <obstacle x1="-112.5" y1="0" x2="-112.5" y2="-25" />
+
+</welcome>
