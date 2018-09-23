@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Loadscene_t {
-    QByteArrayData data[8];
-    char stringdata0[91];
+    QByteArrayData data[9];
+    char stringdata0[116];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,14 +36,15 @@ QT_MOC_LITERAL(1, 10, 11), // "processData"
 QT_MOC_LITERAL(2, 22, 0), // ""
 QT_MOC_LITERAL(3, 23, 4), // "data"
 QT_MOC_LITERAL(4, 28, 16), // "printCoordinates"
-QT_MOC_LITERAL(5, 45, 25), // "std::vector<coordinates>&"
-QT_MOC_LITERAL(6, 71, 6), // "points"
-QT_MOC_LITERAL(7, 78, 12) // "divide_Cells"
+QT_MOC_LITERAL(5, 45, 24), // "std::vector<coordinates>"
+QT_MOC_LITERAL(6, 70, 6), // "points"
+QT_MOC_LITERAL(7, 77, 12), // "divide_Cells"
+QT_MOC_LITERAL(8, 90, 25) // "std::vector<coordinates>&"
 
     },
     "Loadscene\0processData\0\0data\0"
-    "printCoordinates\0std::vector<coordinates>&\0"
-    "points\0divide_Cells"
+    "printCoordinates\0std::vector<coordinates>\0"
+    "points\0divide_Cells\0std::vector<coordinates>&"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +69,7 @@ static const uint qt_meta_data_Loadscene[] = {
  // slots: parameters
     QMetaType::Void, QMetaType::QByteArray,    3,
     QMetaType::Void, 0x80000000 | 5,    6,
-    QMetaType::Void, 0x80000000 | 5,    6,
+    QMetaType::Void, 0x80000000 | 8,    6,
 
        0        // eod
 };

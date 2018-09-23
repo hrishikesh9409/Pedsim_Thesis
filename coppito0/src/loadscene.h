@@ -14,9 +14,12 @@ class Agent;
 #include <QtCore>
 #include <QXmlStreamReader>
 #include <vector>
+#include <algorithm>
 
 extern double cell_length;
 extern double cell_width;
+
+
 
 struct coordinates{
 	double x1;
@@ -24,6 +27,13 @@ struct coordinates{
 	double x2;
 	double y2;
 };
+
+struct vertex{
+	double x;
+	double y;
+};
+
+extern std::vector<coordinates> test;
 
 class Loadscene : public QObject {
 
@@ -38,7 +48,7 @@ class Loadscene : public QObject {
 	
  private slots:
 	void processData(QByteArray data);
-	void printCoordinates(std::vector<coordinates>& points);
+	void printCoordinates(std::vector<coordinates> points);
 	void divide_Cells(std::vector<coordinates>& points);
  private:
 	QXmlStreamReader m_xmlReader;
@@ -47,8 +57,15 @@ class Loadscene : public QObject {
 	
 	QMap<QString, Waypoint*> waypoints;
 	QList<Agent*> agents;
+
+	coordinates c;
+
+	vertex v[4];
+
 	std::vector<coordinates> points;
-	std::vector<std::vector<coordinates> > cells;
+
+	std::vector<vertex> cell_coordinate;
+	std::vector<std::vector<vertex> > cell;
 };
 
 #endif

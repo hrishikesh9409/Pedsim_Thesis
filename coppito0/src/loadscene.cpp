@@ -21,6 +21,8 @@ using namespace std;
 double cell_length = 22.5;
 double cell_width = 15;
 
+std::vector<coordinates> test;
+
 /// object constructor
 /// \date    2011-01-03
 /// \param   please set the parent, if available.
@@ -44,8 +46,8 @@ Loadscene::Loadscene(QString filename, Scene *ppedscene, QGraphicsScene *pgraphi
 /// \date    2012-02-03
 void Loadscene::processData(QByteArray data) {
     m_xmlReader.addData(data);
-    coordinates c;
-
+    
+	int i = 0;
     while (!m_xmlReader.atEnd()) {
         m_xmlReader.readNext();
         if (m_xmlReader.isStartElement()) {
@@ -56,6 +58,10 @@ void Loadscene::processData(QByteArray data) {
                 double y1 = m_xmlReader.attributes().value("y1").toString().toDouble();
                 double x2 = m_xmlReader.attributes().value("x2").toString().toDouble();
                 double y2 = m_xmlReader.attributes().value("y2").toString().toDouble();
+
+                c = {x1,y1,x2,y2};
+                points.push_back(c);
+                
                 pedscene->addObstacle(
                     new Obstacle(x1, y1, x2, y2,
                                  graphicsscene->addLine(1, 1, 0, 0,
@@ -63,10 +69,6 @@ void Loadscene::processData(QByteArray data) {
                                                         )
                                  )
                 );
-
-                c = {x1, y1, x2, y2};
-                points.push_back(c);
-
 
             } else if (m_xmlReader.name() == "waypoint") {
                 QString id = m_xmlReader.attributes().value("id").toString();
@@ -99,17 +101,59 @@ void Loadscene::processData(QByteArray data) {
                 Agent *a; foreach (a, agents) pedscene->addAgent(a);
             }
         }
+
     }
+    test = points;
     printCoordinates(points);
-    divide_Cells(points);
+    
 }
 
-void Loadscene::printCoordinates(std::vector<coordinates>& points){
-    for(int i = 0; i < points.size(); i++){
-        std::cout << points[i].x1 << "," << points[i].y1 << "--->" << points[i].x2 << "," << points[i].y2 << std::endl;
-    }
+void Loadscene::printCoordinates(std::vector<coordinates> points){
+    //int i = 0;
+    // for(int i = 0; i < points.size(); i++){
+    //     std::cout << points[1].x1 + cell_length << "," << points[1].y1 + cell_width << "--->" << points[1].x2 << "," << points[1].y2 << std::endl;
+    // }
+
+    //cout << test[0] << endl;
+    // for(int i = 0; i < cell.size(); i++){
+    // 	for(int j = 0; j < 4; j++){
+    // 		cout << cell[i][j].x << "\t" << cell[i][j].y <<  endl;
+    // 	}
+    // }
 }
 
 void Loadscene::divide_Cells(std::vector<coordinates>& points){
-    std::cout << "\n\n\nHELLO WORLD!!\n\n\n" << cell_length << "    " << cell_width;
+    //std::cout << "\n\n\nHELLO WORLD!!\n\n\n" << cell_length << "    " << cell_width;
+    // for(int i = 0; i < points.size(); i++){
+    // 	v[0].x = points[i].x1;
+    // 	v[0].y = points[i].y1;
+
+    // 	//cout << v1.x << endl;
+
+    // 	v[1].x = points[i].x1 + cell_length;
+    // 	v[1].y = points[i].y1;
+
+    // 	v[2].x = points[i].x1 + cell_length;
+    // 	v[2].y = points[i].y1 + cell_width;
+
+    // 	v[3].x = points[i].x1;
+    // 	v[3].y = points[i].y1 + cell_width;
+
+    // 	cell_coordinate.push_back(v[0]);
+    // 	cell_coordinate.push_back(v[1]);
+    // 	cell_coordinate.push_back(v[2]);
+    // 	cell_coordinate.push_back(v[3]);
+
+    // 	cell.push_back(cell_coordinate);
+    // }
+    
+
+    //cout << endl << points.size() <<endl;
+
+//    printCoordinates(cell);
+
+    
+
+    //cout << endl << cell[0][0].x << endl;
+   	
 }
