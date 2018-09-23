@@ -16,11 +16,6 @@ class Agent;
 #include <vector>
 #include <algorithm>
 
-extern double cell_length;
-extern double cell_width;
-
-
-
 struct coordinates{
 	double x1;
 	double y1;
@@ -28,12 +23,7 @@ struct coordinates{
 	double y2;
 };
 
-struct vertex{
-	double x;
-	double y;
-};
-
-extern std::vector<coordinates> test;
+extern std::vector<coordinates> scene_coordinates;
 
 class Loadscene : public QObject {
 
@@ -60,12 +50,12 @@ class Loadscene : public QObject {
 
 	coordinates c;
 
-	vertex v[4];
+	//vertex v[4];
 
 	std::vector<coordinates> points;
 
-	std::vector<vertex> cell_coordinate;
-	std::vector<std::vector<vertex> > cell;
+	// std::vector<vertex> cell_coordinate;
+	// std::vector<std::vector<vertex> > cell;
 };
 
 #endif

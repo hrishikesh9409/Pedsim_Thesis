@@ -27,6 +27,7 @@
 #include "loadscene.h"
 
 #include "ped_outputwriter.h"
+#include "coppito.h"
 
 using namespace std;
 
@@ -42,6 +43,8 @@ int main(int argc, char **argv) {
     if (scenefile == "") {
         scenefile = "scene.xml";
     }
+
+    Coppito c;
 
     Q_INIT_RESOURCE(application);
 
@@ -60,14 +63,20 @@ int main(int argc, char **argv) {
     pedscene->setOutputWriter(new Ped::UDPOutputWriter());
     gblscene = pedscene;
 
+
+
     Loadscene l(scenefile, pedscene, graphicsscene);
 
     //std::cout << test[0].x1 << "," << test[0].y1 << "-->" << test[0].x2 << "," << test[0].y2 << std::endl;
     //std::cout << std::endl << test.size() << std::endl;
 
-    for(int i = 0; i < test.size(); i++){
-        std::cout << test[i].x1 << "," << test[i].y1 << " --> " << test[i].x2 << "," << test[i].y2 << std::endl;
-    }
+    // for(int i = 0; i < test.size(); i++){
+    //     std::cout << test[i].x1 << "," << test[i].y1 << " --> " << test[i].x2 << "," << test[i].y2 << std::endl;
+    // }
+
+    c.divide_Cells(scene_coordinates);
+
+
 
     mainwindow.graphicsView->setScene(graphicsscene);
     // mainwindow.graphicsView->setViewport(new QGLWidget(QGLFormat(QGL::SampleBuffers)));

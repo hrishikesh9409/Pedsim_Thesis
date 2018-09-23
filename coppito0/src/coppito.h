@@ -1,41 +1,40 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include "loadscene.h"
 
-#define arc_SIZE 1024 //arc capacity --> sample value
-#define MAX 100 //sample total number of people
-#define NODE_SIZE 2048 //sample node size value
-//SIZE = total number of arcs which is in turn derived from the number of nodes?
+extern double cell_length;
+extern double cell_width;
 
-struct arc{
-	int i; //source
-	int j; //destination
+struct vertex{
+	double x;
+	double y;
 };
+
+// struct cell{
+// 	double x1;
+// 	double y1;
+
+// 	double x2;
+// 	double y2;
+
+// 	double x3;
+// 	double y3;
+
+// 	double x4;
+// 	double y4;
+// };
 
 class Coppito{
 private:
-	int Time[100]; //time units
-	int count[5]; //time ticks
+	vertex v[4];
 
-	int Acapacity[arc_SIZE];
-	int Acapacity2[arc_SIZE];
-	int Acapacity3[arc_SIZE];
-
-	// float Coefficient[arc_SIZE];
-	// float Coefficient2[arc_SIZE];
-	// float Coefficient3[arc_SIZE];
-
-	int People[NODE_SIZE];
-	int NCapacity[NODE_SIZE];
-	int NCapacity2[NODE_SIZE];
-	int NCapacity3[NODE_SIZE];
-
-	std::vector<arc> flow;  //x value
-	std::vector<arc> state; //y value, i.e. state or number of ppl at i 
-
+	//std::vector<cell> Cells;
+	std::vector<vertex> cell_coordinate;
+	//std::vector<std::vector<vertex> > cell;
 
 public:
 	Coppito();
-	void insert(std::vector<arc>& n, arc a);
-	void print(std::vector<arc> &n);
+	void divide_Cells(std::vector<coordinates> scene_coordinates);
+	void print(std::vector<coordinates> scene_coordinates);
 };

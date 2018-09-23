@@ -18,10 +18,7 @@
 
 using namespace std;
 
-double cell_length = 22.5;
-double cell_width = 15;
-
-std::vector<coordinates> test;
+std::vector<coordinates> scene_coordinates;
 
 /// object constructor
 /// \date    2011-01-03
@@ -103,8 +100,8 @@ void Loadscene::processData(QByteArray data) {
         }
 
     }
-    test = points;
-    printCoordinates(points);
+    scene_coordinates = points;
+    //printCoordinates(points);
     
 }
 
@@ -120,6 +117,8 @@ void Loadscene::printCoordinates(std::vector<coordinates> points){
     // 		cout << cell[i][j].x << "\t" << cell[i][j].y <<  endl;
     // 	}
     // }
+
+    //cout << cell_width << "    " << cell_length << endl;
 }
 
 void Loadscene::divide_Cells(std::vector<coordinates>& points){
