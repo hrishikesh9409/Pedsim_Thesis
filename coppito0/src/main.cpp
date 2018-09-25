@@ -74,7 +74,8 @@ int main(int argc, char **argv) {
     //     std::cout << test[i].x1 << "," << test[i].y1 << " --> " << test[i].x2 << "," << test[i].y2 << std::endl;
     // }
 
-    c.divide_Cells(scene_coordinates);
+    c.divide_Cells();
+    //c.divide_Cells();
 
 
 

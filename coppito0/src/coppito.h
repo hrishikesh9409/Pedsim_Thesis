@@ -7,21 +7,25 @@ extern double cell_length;
 extern double cell_width;
 
 
-struct vertex{
+struct cell_structure{
 	double x;
 	double y;
 };
 
-extern std::vector<std::vector<vertex> > cell_division;
-
 class Coppito{
 private:
-	vertex v[4];
-	std::vector<vertex> cell_coordinate;
-	std::vector<std::vector<vertex> > cell;
+
+	cell_structure cs[4];
+	cell_structure start;
+	cell_structure temp;
+	cell_structure end[2];
+	cell_structure iterator_vertices[2];
+	
+	std::vector<cell_structure> edge_vertices;
+	std::vector<std::vector<cell_structure> > cell;
 
 public:
 	Coppito();
-	void divide_Cells(std::vector<coordinates> scene_coordinates);
+	void divide_Cells();
 	void print(std::vector<coordinates> scene_coordinates);
 };
