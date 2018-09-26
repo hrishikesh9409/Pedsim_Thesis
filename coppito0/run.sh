@@ -1,0 +1,3 @@
+rm pedsim
+make
+./pedsim
