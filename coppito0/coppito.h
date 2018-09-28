@@ -7,31 +7,60 @@ extern double cell_length;
 extern double cell_width;
 extern int cell_no;
 
-struct cell_structure{
+extern int vertical_cell_allocation_block;
+extern int non_standard_vertical_cell_allocation;
+
+struct wall_vertices{
 	double x;
 	double y;
+};
 
+struct vertex{
+	double x;
+	double y;
+	bool wall;
+};
+
+struct cell_structure{
 	int cell_number;
 	bool door;
+	int cell_next[8];
+	std::vector<std::vector<vertex> > cell_outline;
 };
 
 class Coppito{
 private:
 
-	cell_structure cs[4];
-	cell_structure start;
-	cell_structure temp;
-	cell_structure local;
-	cell_structure end[2];
-	cell_structure iterator_vertices[2];
+	vertex v[4];
+	vertex start;
 	
-	std::vector<cell_structure> edge_vertices;
-	std::vector<std::vector<cell_structure> > cell;
+	//Temporary structures to hold the values of start.x and start.y
+	vertex temp;
 
-	void cell_structure_allocation(cell_structure start, cell_structure end[], int size);
+	vertex end[2];
+	vertex iterator_vertices[2];
+
+	cell_structure cs;
+	
+	std::vector<vertex> edge_vertices;
+	//std::vector<std::vector<vertex> > cell;
+
+	std::vector<cell_structure> cell;
+	std::vector<std::vector<cell_structure> > block;
+
+	wall_vertices wv;
+	std::vector<wall_vertices> walls;
+
+	void cell_structure_allocation(vertex start, vertex end[], int size);
+	void vertical_cell_allocation(vertex start, vertex end[], int size);
+	void non_standard_vertical_allocation(vertex start, vertex end[], int size);
+
+	void wall_allocation(std::vector<std::vector<cell_structure> > block);
+	void wall_divison_horizontal(std::vector<wall_vertices> walls);
 
 public:
 	Coppito();
 	void divide_Cells();
+	void print_cells();
 	void print(std::vector<coordinates> scene_coordinates);
 };

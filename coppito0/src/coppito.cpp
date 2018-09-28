@@ -11,13 +11,16 @@ int non_standard_vertical_cell_allocation = 18;
 int cell_no = 1;
 
 Coppito::Coppito(){
+	for(int i = 0; i < 8; i++){
+		cs.cell_next[i] = 999999;
+	}
 }
 
-void Coppito::print(std::vector<coordinates> scene_coordinates){
+/*void Coppito::print(std::vector<coordinates> scene_coordinates){
 	for(int i = 0; i < scene_coordinates.size(); i++){
         std::cout << scene_coordinates[i].x1 << "," << scene_coordinates[i].y1 << " --> " << scene_coordinates[i].x2 << "," << scene_coordinates[i].y2 << std::endl;
     }
-}
+}*/
 
 void Coppito::print_cells(){
 	cout << endl;
@@ -25,15 +28,110 @@ void Coppito::print_cells(){
 		cout << "Block :" << i << endl;
 		for(int j = 0; j < block[i].size(); j++){
 			cout << "Cell Number :" << block[i][j].cell_number << endl;
+			// for(int p = 0; p < 8; p++){
+			// 	cout << "Cell Next :" << block[i][j].cell_next[p] << endl;
+			// }
 			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
 				for(int l = 0; l < 4; l++){
-					cout << block[i][j].cell_outline[k][l].x << "," << block[i][j].cell_outline[k][l].y << endl;
+					cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << endl;
 				}
 				cout << endl;
 			}
 		}
 		cout << endl << endl << endl;
 	}
+}
+
+
+void Coppito::wall_divison_horizontal(std::vector<wall_vertices> walls, std::vector<std::vector<cell_structure> > block){
+	wall_vertices s; //start wall vertex
+	wall_vertices e; //end wall vertex
+	wall_vertices t; //temp variable
+
+	s.x = walls[0].x;
+	s.y = walls[0].y;
+
+	t = s;
+
+	e.x = walls.back().x;
+	e.y = walls.back().y;
+
+	walls.clear();
+
+	//cout << e.x << "," << e.y << endl;
+	int i = 0;
+	while(true){
+		if(t.x == e.x)
+			break;
+		else if(t.x != e.x && t.y == e.y){
+			t.x = s.x;
+			t.y = s.y;
+
+			//cout << t.x << "," << t.y << endl;
+		}
+
+		s.x = s.x + cell_length;
+		walls.push_back(t);
+		i++;
+	}
+	edge temp_edge;
+	int j = 1;
+	//cout << walls.size() << endl;
+	for(int i = 0; i < walls.size(); i++){
+		//cout << i << " : " << walls[i].x << "," << walls[i].y << endl;
+		if(walls[j].x != walls.back().x && walls[j].y == walls.back().y){
+			temp_edge.startx = walls[i].x;
+			temp_edge.starty = walls[i].y;
+			temp_edge.endx = walls[j].x;
+			temp_edge.endy = walls[j].y;
+
+			//cout << "(" << temp_edge.startx << "," << temp_edge.starty << ")" << " --> " << "(" << temp_edge.endx << "," << temp_edge.endy << ")" << endl;
+			
+			edge_wall.push_back(temp_edge);
+			j++;
+		}
+		else if(walls[j].x == walls.back().x && walls[j].y == walls.back().y){
+			temp_edge.startx = walls[i].x;
+			temp_edge.starty = walls[i].y;
+			temp_edge.endx = walls.back().x;
+			temp_edge.endy = walls.back().y;
+
+			//cout << "(" << temp_edge.startx << "," << temp_edge.starty << ")" << " --> " << "(" << temp_edge.endx << "," << temp_edge.endy << ")" << endl;
+
+			edge_wall.push_back(temp_edge);
+			break;
+		}
+	}
+
+	for(int i = 0; i < edge_wall.size(); i++){
+		cout << "(" << edge_wall[i].startx << "," << edge_wall[i].starty << ")" << " --> " << "(" << edge_wall[i].endx << "," << edge_wall[i].endy << ")" << endl;
+	}
+}
+
+void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
+	//print_cells();
+	
+	wv.x =  -120.0;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x =  -7.5;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+
+	wv.x =  30.0;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x =  120.5;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+
+	wall_divison_horizontal(walls, block);
 }
 
 void Coppito::non_standard_vertical_allocation(vertex start, vertex end[], int size){
@@ -71,9 +169,39 @@ void Coppito::non_standard_vertical_allocation(vertex start, vertex end[], int s
 		edge_vertices.push_back(v[2]);
 		edge_vertices.push_back(v[3]);
 
+		e.startx = edge_vertices[0].x;
+		e.starty = edge_vertices[0].y;
+		e.endx = edge_vertices[1].x;
+		e.endy = edge_vertices[1].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[1].x;
+		e.starty = edge_vertices[1].y;
+		e.endx = edge_vertices[2].x;
+		e.endy = edge_vertices[2].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[2].x;
+		e.starty = edge_vertices[2].y;
+		e.endx = edge_vertices[3].x;
+		e.endy = edge_vertices[3].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[3].x;
+		e.starty = edge_vertices[3].y;
+		e.endx = edge_vertices[0].x;
+		e.endy = edge_vertices[0].y;
+
+		edge_line.push_back(e);
+
 		cs.cell_number = cell_no;
-		cs.cell_outline.push_back(edge_vertices);
+		cs.cell_outline.push_back(edge_line);
+
 		edge_vertices.clear();
+		edge_line.clear();
 
 		cell.push_back(cs);
 		cs.cell_outline.clear();
@@ -131,9 +259,39 @@ void Coppito::vertical_cell_allocation(vertex start, vertex end[], int size){
 		edge_vertices.push_back(v[2]);
 		edge_vertices.push_back(v[3]);
 
+		e.startx = edge_vertices[0].x;
+		e.starty = edge_vertices[0].y;
+		e.endx = edge_vertices[1].x;
+		e.endy = edge_vertices[1].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[1].x;
+		e.starty = edge_vertices[1].y;
+		e.endx = edge_vertices[2].x;
+		e.endy = edge_vertices[2].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[2].x;
+		e.starty = edge_vertices[2].y;
+		e.endx = edge_vertices[3].x;
+		e.endy = edge_vertices[3].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[3].x;
+		e.starty = edge_vertices[3].y;
+		e.endx = edge_vertices[0].x;
+		e.endy = edge_vertices[0].y;
+
+		edge_line.push_back(e);
+
 		cs.cell_number = cell_no;
-		cs.cell_outline.push_back(edge_vertices);
+		cs.cell_outline.push_back(edge_line);
+
 		edge_vertices.clear();
+		edge_line.clear();
 
 		cell.push_back(cs);
 		cs.cell_outline.clear();
@@ -192,9 +350,39 @@ void Coppito::cell_structure_allocation(vertex start, vertex end[], int size){
 		edge_vertices.push_back(v[2]);
 		edge_vertices.push_back(v[3]);
 
+		e.startx = edge_vertices[0].x;
+		e.starty = edge_vertices[0].y;
+		e.endx = edge_vertices[1].x;
+		e.endy = edge_vertices[1].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[1].x;
+		e.starty = edge_vertices[1].y;
+		e.endx = edge_vertices[2].x;
+		e.endy = edge_vertices[2].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[2].x;
+		e.starty = edge_vertices[2].y;
+		e.endx = edge_vertices[3].x;
+		e.endy = edge_vertices[3].y;
+
+		edge_line.push_back(e);
+
+		e.startx = edge_vertices[3].x;
+		e.starty = edge_vertices[3].y;
+		e.endx = edge_vertices[0].x;
+		e.endy = edge_vertices[0].y;
+
+		edge_line.push_back(e);
+
 		cs.cell_number = cell_no;
-		cs.cell_outline.push_back(edge_vertices);
+		cs.cell_outline.push_back(edge_line);
+
 		edge_vertices.clear();
+		edge_line.clear();
 
 		cell.push_back(cs);
 		cs.cell_outline.clear();
@@ -234,7 +422,9 @@ void Coppito::divide_Cells(){
 
 	cell_structure_allocation(start, end, 2);
 
-	//BLOCK 1:
+	//print_cells();
+
+/*	//BLOCK 1:
 	start.x = 30.0;
 	start.y = -90.0;
 
@@ -452,8 +642,10 @@ void Coppito::divide_Cells(){
 
 	non_standard_vertical_allocation(start, end, 2);
 
+	print_cells();*/
 
-	print_cells();
+
+	wall_allocation(block);
 
 	// for(int i  = 0; i < cell.size(); i++){
 	// 	cout << "CELL NO. : " << i + 1 << endl;
