@@ -58,6 +58,7 @@ void Coppito::wall_divison_horizontal(std::vector<wall_vertices> walls, std::vec
 
 	walls.clear();
 
+	//cout << t.x << "," << t.y << endl;
 	//cout << e.x << "," << e.y << endl;
 	int i = 0;
 	while(true){
@@ -103,9 +104,8 @@ void Coppito::wall_divison_horizontal(std::vector<wall_vertices> walls, std::vec
 		}
 	}
 
-	for(int i = 0; i < edge_wall.size(); i++){
-		cout << "(" << edge_wall[i].startx << "," << edge_wall[i].starty << ")" << " --> " << "(" << edge_wall[i].endx << "," << edge_wall[i].endy << ")" << endl;
-	}
+	list_walls.push_back(edge_wall);
+	edge_wall.clear();
 }
 
 void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
@@ -121,17 +121,31 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 
 	walls.push_back(wv);
 
+	wall_divison_horizontal(walls, block);
+	walls.clear();
+
 	wv.x =  30.0;
 	wv.y = -90.0;
 
 	walls.push_back(wv);
 	
-	wv.x =  120.5;
+	wv.x =  120.0;
 	wv.y = -90.0;
 
 	walls.push_back(wv);
 
+	// for(int i = 0; i < walls.size(); i++){
+	// 	cout << walls[i].x << "," << walls[i].y << endl;
+	// }
+
 	wall_divison_horizontal(walls, block);
+	walls.clear();
+
+	for(int i = 0; i < list_walls.size(); i++){
+		for(int j = 0; j < list_walls[i].size(); j++){
+			cout << "(" << list_walls[i][j].startx << "," << list_walls[i][j].starty << ")" << " --> " << "(" << list_walls[i][j].endx << "," << list_walls[i][j].endy << ")" << endl;
+		}
+	}
 }
 
 void Coppito::non_standard_vertical_allocation(vertex start, vertex end[], int size){
@@ -424,7 +438,7 @@ void Coppito::divide_Cells(){
 
 	//print_cells();
 
-/*	//BLOCK 1:
+	//BLOCK 1:
 	start.x = 30.0;
 	start.y = -90.0;
 
@@ -642,7 +656,7 @@ void Coppito::divide_Cells(){
 
 	non_standard_vertical_allocation(start, end, 2);
 
-	print_cells();*/
+	print_cells();
 
 
 	wall_allocation(block);

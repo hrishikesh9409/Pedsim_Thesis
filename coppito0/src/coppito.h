@@ -61,6 +61,7 @@ private:
 
 	wall_vertices wv;
 	std::vector<wall_vertices> walls;
+	std::vector<std::vector<edge> > list_walls;
 
 	void cell_structure_allocation(vertex start, vertex end[], int size);
 	void vertical_cell_allocation(vertex start, vertex end[], int size);
