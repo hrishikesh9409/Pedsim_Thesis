@@ -54,10 +54,11 @@ private:
 	
 	std::vector<vertex> edge_vertices;
 	std::vector<edge> edge_line;
-	std::vector<edge> edge_wall;
-
 	std::vector<cell_structure> cell;
 	std::vector<std::vector<cell_structure> > block;
+
+
+	std::vector<edge> edge_wall;
 
 	wall_vertices wv;
 	std::vector<wall_vertices> walls;
@@ -69,6 +70,7 @@ private:
 
 	void wall_allocation(std::vector<std::vector<cell_structure> > block);
 	void wall_divison_horizontal(std::vector<wall_vertices> walls, std::vector<std::vector<cell_structure> > block);
+	void wall_divison_vertical(std::vector<wall_vertices> walls, std::vector<std::vector<cell_structure> > block);
 
 public:
 	Coppito();
