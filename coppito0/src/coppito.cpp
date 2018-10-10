@@ -271,6 +271,21 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.clear();
 
 	//WALL DIVISION 6:
+	wv.x = 7.5;
+	wv.y = 75.0;
+
+	walls.push_back(wv);
+	
+	wv.x = 97.5;
+	wv.y = 75.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_horizontal(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 7:
 	wv.x = -97.5;
 	wv.y = 45.0;
 
@@ -285,7 +300,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	wall_divison_vertical(walls, block);
 	walls.clear();
 
-	//WALL DIVISION 7:
+	//WALL DIVISION 8:
 	wv.x = -135.0;
 	wv.y = 90.0;
 
@@ -300,7 +315,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	wall_divison_horizontal(walls, block);
 	walls.clear();
 
-	//WALL DIVISION 8:
+	//WALL DIVISION 9:
 	wv.x = -135.0;
 	wv.y = -30.0;
 
@@ -315,7 +330,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	wall_divison_vertical(walls, block);
 	walls.clear();
 
-	//WALL DIVISION 9:
+	//WALL DIVISION 10:
 	wv.x = -120.0;
 	wv.y = -90.0;
 
@@ -330,7 +345,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	wall_divison_vertical(walls, block);
 	walls.clear();
 
-	//WALL DIVISION 10:
+	//WALL DIVISION 11:
 	wv.x = -7.5;
 	wv.y = -90.0;
 
@@ -345,7 +360,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	wall_divison_vertical(walls, block);
 	walls.clear();
 
-	//WALL DIVISION 11:
+	//WALL DIVISION 12:
 	wv.x = -7.5;
 	wv.y = -60.0;
 
