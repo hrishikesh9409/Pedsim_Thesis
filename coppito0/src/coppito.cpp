@@ -375,6 +375,293 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	wall_divison_horizontal(walls, block);
 	walls.clear();
 
+	//WALL DIVISION 13:
+	wv.x = -120.0;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -7.5;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_horizontal(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 14:
+	wv.x = 30.0;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+	
+	wv.x = 120.0;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_horizontal(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 15:
+	wv.x = -97.5;
+	wv.y = -45.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -7.5;
+	wv.y = -45.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_horizontal(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 16:
+	wv.x = -97.5;
+	wv.y = 0.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -7.5;
+	wv.y = 0.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_horizontal(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 17:
+	wv.x = -97.5;
+	wv.y = 30.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -7.5;
+	wv.y = 30.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_horizontal(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 18:
+	wv.x = -97.5;
+	wv.y = -45.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -97.5;
+	wv.y = 30.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 19:
+	wv.x = -52.5;
+	wv.y = -45.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -52.5;
+	wv.y = 30.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 20:
+	wv.x = -7.5;
+	wv.y = -45.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -7.5;
+	wv.y = 30.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 21:
+	wv.x = -75.0;
+	wv.y = 0.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -75.0;
+	wv.y = 30.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 21:
+	wv.x = -30.0;
+	wv.y = 0.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -30.0;
+	wv.y = 30.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 22:
+	wv.x = -97.5;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -97.5;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 23:
+	wv.x = -75.0;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -75.0;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 24:
+	wv.x = -52.5;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -52.5;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 25:
+	wv.x = -30.0;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -30.0;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 26:
+	wv.x = 30.0;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = 30.0;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 28:
+	wv.x = 52.5;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = 52.5;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 29:
+	wv.x = 75.0;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = 75.0;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 30:
+	wv.x = 97.5;
+	wv.y = -90.0;
+
+	walls.push_back(wv);
+	
+	wv.x = 97.5;
+	wv.y = -60.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+	//WALL DIVISION 31:
+	wv.x = -75.0;
+	wv.y = 45.0;
+
+	walls.push_back(wv);
+	
+	wv.x = -75.0;
+	wv.y = 75.0;
+
+	walls.push_back(wv);
+
+
+	wall_divison_vertical(walls, block);
+	walls.clear();
+
+
+
 
 	for(int i = 0; i < list_walls.size(); i++){
 		cout << "WALL DIVISION: " << i << endl;
