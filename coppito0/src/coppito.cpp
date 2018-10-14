@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#define MAX 999999;
+
 double cell_length = 22.5;
 double cell_width = 15.0;
 
@@ -12,8 +14,11 @@ int cell_no = 1;
 
 Coppito::Coppito(){
 	for(int i = 0; i < 8; i++){
-		cs.cell_next[i] = 999999;
+		cs.cell_next[i] = MAX;
 	}
+
+	e.wall = false;
+	e.door = false;
 }
 
 /*void Coppito::print(std::vector<coordinates> scene_coordinates){
@@ -21,6 +26,11 @@ Coppito::Coppito(){
         std::cout << scene_coordinates[i].x1 << "," << scene_coordinates[i].y1 << " --> " << scene_coordinates[i].x2 << "," << scene_coordinates[i].y2 << std::endl;
     }
 }*/
+
+void Coppito::wall_door_inclusion(){
+
+}
+
 
 void Coppito::print_cells(){
 	cout << endl;
@@ -33,7 +43,7 @@ void Coppito::print_cells(){
 			// }
 			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
 				for(int l = 0; l < 4; l++){
-					cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << endl;
+					cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" /*<< "\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door*/ << endl;
 				}
 				cout << endl;
 			}
@@ -42,10 +52,468 @@ void Coppito::print_cells(){
 	}
 }
 
-void Coppito::wall_divison_vertical(std::vector<wall_vertices> walls, std::vector<std::vector<cell_structure> > block){
-	wall_vertices s; //start wall vertex
-	wall_vertices e; //end wall vertex
-	wall_vertices t; //temp variable
+void Coppito::door_assignment(std::vector<vertex> doors){
+	edge temp_door;
+
+	temp_door.startx = doors[0].x;
+	temp_door.starty = doors[0].y;
+	temp_door.endx = doors.back().x;
+	temp_door.endy = doors.back().y;
+
+	doorway.push_back(temp_door);
+	list_doors.push_back(doorway);
+	doorway.clear();
+}
+
+void Coppito::door_allocation(){
+
+	//DOOR 0:
+	dr.x = -102.5;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = -97.5;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	// for(int i = 0; i < doors.size(); i++){
+	// 	cout << doors[i].x << ", " << doors[i].y << endl;
+	// }
+
+	//DOOR 1:
+	dr.x = -97.5;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = -92.5;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 2:
+	dr.x = -66.25;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = -61.25;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 3:
+	dr.x = -35.0;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = -30.0;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 4:
+	dr.x = -12.5;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = -7.5;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 5:
+	dr.x = 12.5;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = 17.5;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 6:
+	dr.x = 38.75;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = 43.75;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 7:
+	dr.x = 70.0;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = 75.0;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 8:
+	dr.x = 80.0;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = 85.0;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 9:
+	dr.x = 102.5;
+	dr.y = -60.0;
+
+	doors.push_back(dr);
+
+	dr.x = 107.5;
+	dr.y = -60.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 10:
+	dr.x = -120.0;
+	dr.y = -35.0;
+
+	doors.push_back(dr);
+
+	dr.x = -120.0;
+	dr.y = -30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 11:
+	dr.x = 92.5;
+	dr.y = -30.0;
+
+	doors.push_back(dr);
+
+	dr.x = 97.5;
+	dr.y = -30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 12:
+	dr.x = -52.5;
+	dr.y = -5.0;
+
+	doors.push_back(dr);
+
+	dr.x = -52.5;
+	dr.y = 0.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 13:
+	dr.x = -7.5;
+	dr.y = -5.0;
+
+	doors.push_back(dr);
+
+	dr.x = -7.5;
+	dr.y = 0.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 14:
+	dr.x = 97.5;
+	dr.y = -15.0;
+
+	doors.push_back(dr);
+
+	dr.x = 102.5;
+	dr.y = -15.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 15:
+	dr.x = -97.5;
+	dr.y = 30.0;
+
+	doors.push_back(dr);
+
+	dr.x = -92.5;
+	dr.y = 30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 16:
+	dr.x = -75.0;
+	dr.y = 30.0;
+
+	doors.push_back(dr);
+
+	dr.x = -70.0;
+	dr.y = 30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 17:
+	dr.x = -52.5;
+	dr.y = 30.0;
+
+	doors.push_back(dr);
+
+	dr.x = -47.5;
+	dr.y = 30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 18:
+	dr.x = -30.0;
+	dr.y = 30.0;
+
+	doors.push_back(dr);
+
+	dr.x = -25.0;
+	dr.y = 30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 19:
+	dr.x = 7.5;
+	dr.y = 30.0;
+
+	doors.push_back(dr);
+
+	dr.x = 12.5;
+	dr.y = 30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 20:
+	dr.x = 30.0;
+	dr.y = 30.0;
+
+	doors.push_back(dr);
+
+	dr.x = 35.0;
+	dr.y = 30.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 21:
+	dr.x = -112.5;
+	dr.y = -30.0;
+
+	doors.push_back(dr);
+
+	dr.x = -112.5;
+	dr.y = -25.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 22:
+	dr.x = -112.5;
+	dr.y = 15.0;
+
+	doors.push_back(dr);
+
+	dr.x = -112.5;
+	dr.y = 20.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 23:
+	dr.x = -112.5;
+	dr.y = 45.0;
+
+	doors.push_back(dr);
+
+	dr.x = -112.5;
+	dr.y = 50.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 24:
+	dr.x = -112.5;
+	dr.y = 75.0;
+
+	doors.push_back(dr);
+
+	dr.x = -112.5;
+	dr.y = 80.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 25:
+	dr.x = -97.5;
+	dr.y = 45.0;
+
+	doors.push_back(dr);
+
+	dr.x = -92.5;
+	dr.y = 45.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 26:
+	dr.x = -75.0;
+	dr.y = 45.0;
+
+	doors.push_back(dr);
+
+	dr.x = -70.0;
+	dr.y = 45.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 27:
+	dr.x = -52.5;
+	dr.y = 45.0;
+
+	doors.push_back(dr);
+
+	dr.x = -47.5;
+	dr.y = 45.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 28:
+	dr.x = -30.0;
+	dr.y = 45.0;
+
+	doors.push_back(dr);
+
+	dr.x = -25.0;
+	dr.y = 45.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 29:
+	dr.x = 7.5;
+	dr.y = 45.0;
+
+	doors.push_back(dr);
+
+	dr.x = 12.5;
+	dr.y = 45.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 30:
+	dr.x = 30.0;
+	dr.y = 45.0;
+
+	doors.push_back(dr);
+
+	dr.x = 35.0;
+	dr.y = 45.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 31:
+	dr.x = 52.5;
+	dr.y = 35.0;
+
+	doors.push_back(dr);
+
+	dr.x = 52.5;
+	dr.y = 40.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	//DOOR 32:
+	dr.x = -2.5;
+	dr.y = 75.0;
+
+	doors.push_back(dr);
+
+	dr.x = 2.5;
+	dr.y = 75.0; 
+
+	doors.push_back(dr);
+	door_assignment(doors);
+	doors.clear();
+
+	cout << endl;
+	for(int i = 0; i < list_doors.size(); i++){
+		cout << "Door Number " << i << " :" << endl; 
+		for(int j = 0; j < list_doors[i].size(); j++){
+			cout << list_doors[i][j].startx << ", " << list_doors[i][j].starty << " --> " << list_doors[i][j].endx << ", " << list_doors[i][j].endy << endl;
+		}
+		cout << endl << endl;
+	}
+}	
+
+void Coppito::wall_division_vertical(std::vector<vertex> walls){
+	vertex s; //start wall vertex
+	vertex e; //end wall vertex
+	vertex t; //temp variable
 
 	s.x = walls[0].x;
 	s.y = walls[0].y;
@@ -108,10 +576,10 @@ void Coppito::wall_divison_vertical(std::vector<wall_vertices> walls, std::vecto
 }
 
 
-void Coppito::wall_divison_horizontal(std::vector<wall_vertices> walls, std::vector<std::vector<cell_structure> > block){
-	wall_vertices s; //start wall vertex
-	wall_vertices e; //end wall vertex
-	wall_vertices t; //temp variable
+void Coppito::wall_division_horizontal(std::vector<vertex> walls){
+	vertex s; //start wall vertex
+	vertex e; //end wall vertex
+	vertex t; //temp variable
 
 	s.x = walls[0].x;
 	s.y = walls[0].y;
@@ -173,7 +641,7 @@ void Coppito::wall_divison_horizontal(std::vector<wall_vertices> walls, std::vec
 	edge_wall.clear();
 }
 
-void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
+void Coppito::wall_allocation(){
 	
 
 	//WALL DIVISION 0:
@@ -193,7 +661,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 
 
 	//WALL DIVISION 1:
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	wv.x = 30.0;
@@ -207,7 +675,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 2:
@@ -222,7 +690,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 3:
@@ -237,7 +705,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 4:
@@ -252,7 +720,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 5:
@@ -267,7 +735,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 6:
@@ -282,7 +750,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 7:
@@ -297,7 +765,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 8:
@@ -312,7 +780,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 9:
@@ -327,7 +795,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 10:
@@ -342,7 +810,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 11:
@@ -357,7 +825,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 12:
@@ -372,7 +840,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 13:
@@ -387,7 +855,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 14:
@@ -402,7 +870,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 15:
@@ -417,7 +885,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 16:
@@ -432,7 +900,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 17:
@@ -447,7 +915,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 18:
@@ -462,7 +930,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 19:
@@ -477,7 +945,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 20:
@@ -492,7 +960,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 21:
@@ -507,7 +975,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 21:
@@ -522,7 +990,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 22:
@@ -537,7 +1005,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 23:
@@ -552,7 +1020,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 24:
@@ -567,7 +1035,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 25:
@@ -582,7 +1050,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 26:
@@ -597,7 +1065,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 28:
@@ -612,7 +1080,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 29:
@@ -627,7 +1095,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 30:
@@ -642,7 +1110,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 31:
@@ -657,7 +1125,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 32:
@@ -672,7 +1140,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 33:
@@ -687,7 +1155,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 34:
@@ -702,7 +1170,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 35:
@@ -717,7 +1185,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 36:
@@ -732,7 +1200,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 37:
@@ -747,7 +1215,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 38:
@@ -762,7 +1230,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 39:
@@ -777,7 +1245,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 40:
@@ -792,7 +1260,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 41:
@@ -807,7 +1275,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 42:
@@ -822,7 +1290,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 43:
@@ -837,7 +1305,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 44:
@@ -852,7 +1320,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 45:
@@ -867,7 +1335,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 46:
@@ -882,7 +1350,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 47:
@@ -897,7 +1365,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 48:
@@ -912,7 +1380,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 49:
@@ -927,7 +1395,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_vertical(walls, block);
+	wall_division_vertical(walls);
 	walls.clear();
 
 	//WALL DIVISION 50:
@@ -942,7 +1410,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 51:
@@ -957,7 +1425,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 52:
@@ -972,7 +1440,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 	//WALL DIVISION 53:
@@ -987,7 +1455,7 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 	walls.push_back(wv);
 
 
-	wall_divison_horizontal(walls, block);
+	wall_division_horizontal(walls);
 	walls.clear();
 
 
@@ -998,6 +1466,8 @@ void Coppito::wall_allocation(std::vector<std::vector<cell_structure> > block){
 		}
 		cout << endl;
 	}
+
+	wall_door_inclusion();
 }
 
 void Coppito::non_standard_vertical_allocation(vertex start, vertex end[], int size){
@@ -1508,10 +1978,12 @@ void Coppito::divide_Cells(){
 
 	non_standard_vertical_allocation(start, end, 2);
 
-	print_cells();
+	//print_cells();
 
 
-	wall_allocation(block);
+	wall_allocation();
+
+	//door_allocation();
 
 	// for(int i  = 0; i < cell.size(); i++){
 	// 	cout << "CELL NO. : " << i + 1 << endl;
@@ -1521,3 +1993,4 @@ void Coppito::divide_Cells(){
 	// 	cout << endl;
 	// }
 }
+
