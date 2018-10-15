@@ -29,7 +29,6 @@ struct edge{
 
 struct cell_structure{
 	int cell_number;
-	bool door;
 	int cell_next[8];
 	std::vector<edge> edge_line;
 	std::vector<std::vector<edge> > cell_outline;
@@ -51,7 +50,6 @@ private:
 	cell_structure cs;
 	
 	std::vector<vertex> edge_vertices;
-	std::vector<edge> edge_line;
 	std::vector<cell_structure> cell;
 	std::vector<std::vector<cell_structure> > block;
 

@@ -1,3 +1,3 @@
 rm pedsim
-make
+make -j 4
 ./pedsim
