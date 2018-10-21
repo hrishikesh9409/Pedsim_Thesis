@@ -53,9 +53,8 @@ Ped::Tagent::Tagent() {
 
     agentRadius = 0.2;
 
-    relaxationTime = 0.5;
-
-    waypointbehavior = BEHAVIOR_CIRCULAR;
+    relaxationTime = 0.5; 
+    waypointbehavior = BEHAVIOR_ONCE;
 
  //    arc a;
 	// Coppito c;

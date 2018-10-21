@@ -26,6 +26,7 @@ Coppito::Coppito(){
         std::cout << scene_coordinates[i].x1 << "," << scene_coordinates[i].y1 << " --> " << scene_coordinates[i].x2 << "," << scene_coordinates[i].y2 << std::endl;
     }
 }*/
+
 void Coppito::wall_door_inclusion(){
 	for(int i = 0; i < block.size(); i++){
 		for(int j = 0; j < block[i].size(); j++){
@@ -36,7 +37,7 @@ void Coppito::wall_door_inclusion(){
 							if((block[i][j].cell_outline[k][l].startx == list_walls[m][n].startx && block[i][j].cell_outline[k][l].starty == list_walls[m][n].starty && block[i][j].cell_outline[k][l].endx == list_walls[m][n].endx && block[i][j].cell_outline[k][l].endy == list_walls[m][n].endy)||
 								(block[i][j].cell_outline[k][l].startx == list_walls[m][n].endx && block[i][j].cell_outline[k][l].starty == list_walls[m][n].endy && block[i][j].cell_outline[k][l].endx == list_walls[m][n].startx && block[i][j].cell_outline[k][l].endy == list_walls[m][n].starty)){
 								block[i][j].cell_outline[k][l].wall = true;
-								continue;
+								//cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
 							}
 						}
 					}
@@ -53,24 +54,62 @@ void Coppito::wall_door_inclusion(){
 				for(int l = 0; l < 4; l++){
 					for(int m = 0; m < list_doors.size(); m++){
 						for(int n = 0; n < list_doors[m].size(); n++){
-							if((block[i][j].cell_outline[k][l].startx == list_walls[m][n].startx && block[i][j].cell_outline[k][l].starty == list_walls[m][n].starty && block[i][j].cell_outline[k][l].endx == list_walls[m][n].endx && block[i][j].cell_outline[k][l].endy == list_walls[m][n].endy)||
-								(block[i][j].cell_outline[k][l].startx == list_walls[m][n].endx && block[i][j].cell_outline[k][l].starty == list_walls[m][n].endy && block[i][j].cell_outline[k][l].endx == list_walls[m][n].startx && block[i][j].cell_outline[k][l].endy == list_walls[m][n].starty)){
-								block[i][j].cell_outline[k][l].wall = true;
-								continue;
+							if(block[i][j].cell_outline[k][l].startx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
+								if(block[i][j].cell_outline[k][l].starty == list_doors[m][n].starty){
+									if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].endx){
+										block[i][j].cell_outline[k][l].door = true;
+										continue;
+									}
+									else if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].endy){
+										block[i][j].cell_outline[k][l].door = true;
+										continue;
+									}
+								}
 							}
+							else if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
+								if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].starty){
+									if(block[i][j].cell_outline[k][l].starty == list_doors[m][n].starty){
+										block[i][j].cell_outline[k][l].door = true;
+										continue;
+									}
+									else if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].endx){
+										block[i][j].cell_outline[k][l].door = true;
+										continue;
+									}
+								}
+							}
+							// else if(block[i][j].cell_outline[k][l].startx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
+							// 	if(list_doors[m][n].endy > block[i][j].cell_outline[k][l].endy && list_doors[m][n].endy < block[i][j].cell_outline[k][l+1].endy){
+							// 		block[i][j].cell_outline[k][l].door = true;
+							// 		continue;
+							// 	}
+							// }
+							// else if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].endy && block[i][j].cell_outline[k][l].wall == true){
+							// 	if(list_doors[m][n].startx > block[i][j].cell_outline[k][l].startx && list_doors[m][n].startx < block[i][j].cell_outline[k][l+1].startx){
+							// 		block[i][j].cell_outline[k][l].door = true;
+							// 		continue;
+							// 	}
+							// }
 						}
 					}
 				}
 			}
 		}
-	}
+	}	
 
-	// for(int i = 0; i < list_walls.size(); i++){
-	// 	for(int j = 0; j < list_walls[i].size(); j++){
-	// 		cout << "(" << list_walls[i][j].startx << "," << list_walls[i][j].starty << ")" << " --> " << "(" << list_walls[i][j].endx << "," << list_walls[i][j].endy << ")" << endl;
-	// 	}
-	// 	cout << endl;
-	// }
+// 	for(int i = 0; i < block.size(); i++){
+// 		cout << "Block :" << i << endl;
+// 		for(int j = 0; j < block[i].size(); j++){
+// 			cout << "Cell Number :" << block[i][j].cell_number << endl;
+// 			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
+// 				for(int l = 0; l < 4; l++){
+// 					if(block[i][j].cell_outline[k][l].wall == true && block[i][j].cell_outline[k][l].door == true){
+// 						cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
 }
 
 
@@ -85,7 +124,7 @@ void Coppito::print_cells(){
 			// }
 			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
 				for(int l = 0; l < 4; l++){
-					cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall /*<< "\tdoor = " << block[i][j].cell_outline[k][l].door*/ << endl;
+					cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
 				}
 				cout << endl;
 			}
@@ -542,14 +581,14 @@ void Coppito::door_allocation(){
 	door_assignment(doors);
 	doors.clear();
 
-	cout << endl;
-	for(int i = 0; i < list_doors.size(); i++){
-		cout << "Door Number " << i << " :" << endl; 
-		for(int j = 0; j < list_doors[i].size(); j++){
-			cout << list_doors[i][j].startx << ", " << list_doors[i][j].starty << " --> " << list_doors[i][j].endx << ", " << list_doors[i][j].endy << endl;
-		}
-		cout << endl << endl;
-	}
+	// cout << endl;
+	// for(int i = 0; i < list_doors.size(); i++){
+	// 	cout << "Door Number " << i << " :" << endl; 
+	// 	for(int j = 0; j < list_doors[i].size(); j++){
+	// 		cout << list_doors[i][j].startx << ", " << list_doors[i][j].starty << " --> " << list_doors[i][j].endx << ", " << list_doors[i][j].endy << endl;
+	// 	}
+	// 	cout << endl << endl;
+	// }
 }	
 
 void Coppito::wall_division_vertical(std::vector<vertex> walls){
@@ -1500,14 +1539,33 @@ void Coppito::wall_allocation(){
 	wall_division_horizontal(walls);
 	walls.clear();
 
+	//WALL DIVISION 53:
+	wv.x = 97.5;
+	wv.y = -15.0;
 
+	walls.push_back(wv);
+	
+	wv.x = 120.0;
+	wv.y = -15.0;
+
+	walls.push_back(wv);
+
+
+	wall_division_horizontal(walls);
+	walls.clear();
+
+	// int count = 0;
 	// for(int i = 0; i < list_walls.size(); i++){
-	// 	cout << "WALL DIVISION: " << i << endl;
+	// 	//cout << "WALL DIVISION: " << i << endl;
 	// 	for(int j = 0; j < list_walls[i].size(); j++){
-	// 		cout << "(" << list_walls[i][j].startx << "," << list_walls[i][j].starty << ")" << " --> " << "(" << list_walls[i][j].endx << "," << list_walls[i][j].endy << ")" << endl;
+	// 		//cout << "(" << list_walls[i][j].startx << "," << list_walls[i][j].starty << ")" << " --> " << "(" << list_walls[i][j].endx << "," << list_walls[i][j].endy << ")" << endl;
+	// 		//cout << count << endl;
+	// 		count++;
 	// 	}
 	// 	cout << endl;
 	// }
+
+	// cout << "number of walls : " << count << endl;
 }
 
 void Coppito::non_standard_vertical_allocation(vertex start, vertex end[], int size){

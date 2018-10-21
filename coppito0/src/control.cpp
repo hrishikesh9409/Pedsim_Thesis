@@ -53,7 +53,7 @@ void Control::showTree(bool show) {
 
 
 void Control::simWallForce(int value) {
-    config.setSimWallForce(0.1f*value); // div value by 10
+    config.setSimWallForce(0.0f*value); // div value by 10
     ui.wallforceLabel->setText(QString("Wall Force (%1)").arg(config.simWallForce));
 }
 
