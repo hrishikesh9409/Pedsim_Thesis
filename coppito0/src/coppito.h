@@ -74,7 +74,8 @@ private:
 
 	void door_allocation();
 	void door_assignment(std::vector<vertex> doors);
-	void wall_door_inclusion();
+	void wall_inclusion();
+	void door_inclusion();
 
 public:
 	Coppito();
