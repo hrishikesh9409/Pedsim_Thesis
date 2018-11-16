@@ -1,7 +1,7 @@
 <welcome>
 
   <!-- waypoints - define before the agents! -->
-  <waypoint id="w1" x="-160" y="-51" r=" 4" />
+  <waypoint id="w1" x="-160" y="-51" r=" 17" />
   <waypoint id="w11" x="-112" y=" -2" r=" 16" />
   <waypoint id="w2" x="163" y=" -55" r=" 16" />
   <waypoint id="w22" x="112" y=" -2" r=" 16" />

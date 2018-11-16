@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
     Q_INIT_RESOURCE(application);
 
     QApplication app(argc, argv);
-    //	QApplication::setStyle(new Style());
+    //  QApplication::setStyle(new Style());
 
     MainWindow mainwindow;
     mainwindow.show();

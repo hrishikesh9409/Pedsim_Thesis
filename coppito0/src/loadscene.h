@@ -13,17 +13,6 @@ class Agent;
 
 #include <QtCore>
 #include <QXmlStreamReader>
-#include <vector>
-#include <algorithm>
-
-struct coordinates{
-	double x1;
-	double y1;
-	double x2;
-	double y2;
-};
-
-extern std::vector<coordinates> scene_coordinates;
 
 class Loadscene : public QObject {
 
@@ -38,8 +27,7 @@ class Loadscene : public QObject {
 	
  private slots:
 	void processData(QByteArray data);
-	void printCoordinates(std::vector<coordinates> points);
-	void divide_Cells(std::vector<coordinates>& points);
+	
  private:
 	QXmlStreamReader m_xmlReader;
 	Scene *pedscene; 
@@ -47,15 +35,6 @@ class Loadscene : public QObject {
 	
 	QMap<QString, Waypoint*> waypoints;
 	QList<Agent*> agents;
-
-	coordinates c;
-
-	//vertex v[4];
-
-	std::vector<coordinates> points;
-
-	// std::vector<vertex> cell_coordinate;
-	// std::vector<std::vector<vertex> > cell;
 };
 
 #endif

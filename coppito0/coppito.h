@@ -1,4 +1,5 @@
 #pragma once
+
 #include <vector>
 #include <iostream>
 #include "loadscene.h"
@@ -10,15 +11,9 @@ extern int cell_no;
 extern int vertical_cell_allocation_block;
 extern int non_standard_vertical_cell_allocation;
 
-struct wall_vertices{
-	double x;
-	double y;
-};
-
 struct vertex{
 	double x;
 	double y;
-	bool wall;
 };
 
 struct edge{
@@ -27,11 +22,13 @@ struct edge{
 
 	double endx;
 	double endy;
+
+	bool wall;
+	bool door;
 };
 
 struct cell_structure{
 	int cell_number;
-	bool door;
 	int cell_next[8];
 	std::vector<edge> edge_line;
 	std::vector<std::vector<edge> > cell_outline;
@@ -53,28 +50,36 @@ private:
 	cell_structure cs;
 	
 	std::vector<vertex> edge_vertices;
-	std::vector<edge> edge_line;
 	std::vector<cell_structure> cell;
 	std::vector<std::vector<cell_structure> > block;
 
 
 	std::vector<edge> edge_wall;
+	std::vector<edge> doorway;
 
-	wall_vertices wv;
-	std::vector<wall_vertices> walls;
+	vertex wv;
+	vertex dr;
+	std::vector<vertex> walls;
+	std::vector<vertex> doors;
 	std::vector<std::vector<edge> > list_walls;
+	std::vector<std::vector<edge> > list_doors;
 
 	void cell_structure_allocation(vertex start, vertex end[], int size);
 	void vertical_cell_allocation(vertex start, vertex end[], int size);
 	void non_standard_vertical_allocation(vertex start, vertex end[], int size);
 
-	void wall_allocation(std::vector<std::vector<cell_structure> > block);
-	void wall_divison_horizontal(std::vector<wall_vertices> walls, std::vector<std::vector<cell_structure> > block);
-	void wall_divison_vertical(std::vector<wall_vertices> walls, std::vector<std::vector<cell_structure> > block);
+	void wall_allocation();
+	void wall_division_horizontal(std::vector<vertex> walls);
+	void wall_division_vertical(std::vector<vertex> walls);
+
+	void door_allocation();
+	void door_assignment(std::vector<vertex> doors);
+	void wall_inclusion();
+	void door_inclusion();
 
 public:
 	Coppito();
 	void divide_Cells();
 	void print_cells();
-	void print(std::vector<coordinates> scene_coordinates);
+//	void print(std::vector<coordinates> scene_coordinates);
 };

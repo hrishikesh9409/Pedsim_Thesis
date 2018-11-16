@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'control.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.1
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,12 +10,15 @@
 #define UI_CONTROL_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDockWidget>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
@@ -290,31 +293,31 @@ public:
 
     void retranslateUi(QDockWidget *Control)
     {
-        Control->setWindowTitle(QApplication::translate("Control", "PedSim Control", nullptr));
+        Control->setWindowTitle(QApplication::translate("Control", "PedSim Control", 0));
         label->setText(QApplication::translate("Control", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:12pt; font-weight:600; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#000000;\">Coppito 0</span></p></body></html>", nullptr));
-        groupBox->setTitle(QApplication::translate("Control", "Display Options", nullptr));
-        label_6->setText(QApplication::translate("Control", "Zoom Level", nullptr));
-        zoominButton->setText(QApplication::translate("Control", "+", nullptr));
-        zoomoutButton->setText(QApplication::translate("Control", "-", nullptr));
-        waypointsCheckBox->setText(QApplication::translate("Control", "Show Waypoints", nullptr));
-        treeCheckBox->setText(QApplication::translate("Control", "Show Quadtree", nullptr));
-        showDirectionCheckBox->setText(QApplication::translate("Control", "Show Direction", nullptr));
-        showForcesCheckBox->setText(QApplication::translate("Control", "Show Forces", nullptr));
-        followAgentCheckBox->setText(QApplication::translate("Control", "Follow Agent", nullptr));
-        fpsLabel->setText(QApplication::translate("Control", "Framerate", nullptr));
-        groupBox_4->setTitle(QApplication::translate("Control", "Mental Layer Options", nullptr));
-        mlLookAheadCheckBox->setText(QApplication::translate("Control", "Look Ahead", nullptr));
-        mlTendencyCheckBox->setText(QApplication::translate("Control", "Tendency", nullptr));
-        checkBox_4->setText(QApplication::translate("Control", "Dijkstra Routing", nullptr));
-        checkBox_3->setText(QApplication::translate("Control", "Visual Avoidance", nullptr));
-        groupBox_2->setTitle(QApplication::translate("Control", "Physical Layer Options", nullptr));
-        simhLabel->setText(QApplication::translate("Control", "Precision (h)", nullptr));
-        wallforceLabel->setText(QApplication::translate("Control", "Wall Force", nullptr));
-        pedforceLabel->setText(QApplication::translate("Control", "Pedestrian Force", nullptr));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#000000;\">Coppito 0</span></p></body></html>", 0));
+        groupBox->setTitle(QApplication::translate("Control", "Display Options", 0));
+        label_6->setText(QApplication::translate("Control", "Zoom Level", 0));
+        zoominButton->setText(QApplication::translate("Control", "+", 0));
+        zoomoutButton->setText(QApplication::translate("Control", "-", 0));
+        waypointsCheckBox->setText(QApplication::translate("Control", "Show Waypoints", 0));
+        treeCheckBox->setText(QApplication::translate("Control", "Show Quadtree", 0));
+        showDirectionCheckBox->setText(QApplication::translate("Control", "Show Direction", 0));
+        showForcesCheckBox->setText(QApplication::translate("Control", "Show Forces", 0));
+        followAgentCheckBox->setText(QApplication::translate("Control", "Follow Agent", 0));
+        fpsLabel->setText(QApplication::translate("Control", "Framerate", 0));
+        groupBox_4->setTitle(QApplication::translate("Control", "Mental Layer Options", 0));
+        mlLookAheadCheckBox->setText(QApplication::translate("Control", "Look Ahead", 0));
+        mlTendencyCheckBox->setText(QApplication::translate("Control", "Tendency", 0));
+        checkBox_4->setText(QApplication::translate("Control", "Dijkstra Routing", 0));
+        checkBox_3->setText(QApplication::translate("Control", "Visual Avoidance", 0));
+        groupBox_2->setTitle(QApplication::translate("Control", "Physical Layer Options", 0));
+        simhLabel->setText(QApplication::translate("Control", "Precision (h)", 0));
+        wallforceLabel->setText(QApplication::translate("Control", "Wall Force", 0));
+        pedforceLabel->setText(QApplication::translate("Control", "Pedestrian Force", 0));
     } // retranslateUi
 
 };

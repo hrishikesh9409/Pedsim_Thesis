@@ -81,5 +81,5 @@ public:
 	Coppito();
 	void divide_Cells();
 	void print_cells();
-	void print(std::vector<coordinates> scene_coordinates);
+//	void print(std::vector<coordinates> scene_coordinates);
 };
