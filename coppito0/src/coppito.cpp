@@ -80,9 +80,8 @@ void Coppito::wall_inclusion(){
 			}
 		}
 	}
-
-	//Must add walls to special blocks 14 and 18 - pending task
-
+	
+	//BLOCK 14:
 	for(int i = 0; i < block.size(); i++){
 		if(i == vertical_cell_allocation_block){
 			for(int j = 0; j < block[i].size(); j++){
@@ -124,6 +123,47 @@ void Coppito::wall_inclusion(){
 			}
 		}
 	}
+
+	//BLOCK 18:
+	for(int i = 0; i < block.size(); i++){
+		if(i == non_standard_vertical_cell_allocation){
+			for(int j = 0; j < block[i].size(); j++){
+				for(int k = 0; k < block[i][j].cell_outline.size(); k++){
+					for(int l = 0; l < 4; l++){
+						if(block[i][j].cell_outline[k][l].startx == -97.5 && block[i][j].cell_outline[k][l].endx == -97.5){
+							if(block[i][j].cell_outline[k][l].starty == -30 && block[i][j].cell_outline[k][l].endy == 0){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+							else if(block[i][j].cell_outline[k][l].starty == 0 && block[i][j].cell_outline[k][l].endy == 30){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+							else if(block[i][j].cell_outline[k][l].starty == 30 && block[i][j].cell_outline[k][l].endy == 60){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+							else if(block[i][j].cell_outline[k][l].starty == 60 && block[i][j].cell_outline[k][l].endy == 90){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+						}
+						else if(block[i][j].cell_outline[k][l].startx == -112.5 && block[i][j].cell_outline[k][l].endx == -112.5){
+							if(block[i][j].cell_outline[k][l].starty == 0 && block[i][j].cell_outline[k][l].endy == -30){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+							else if(block[i][j].cell_outline[k][l].starty == 30 && block[i][j].cell_outline[k][l].endy == 0){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+							else if(block[i][j].cell_outline[k][l].starty == 60 && block[i][j].cell_outline[k][l].endy == 30){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+							else if(block[i][j].cell_outline[k][l].starty == 90 && block[i][j].cell_outline[k][l].endy == 60){
+								block[i][j].cell_outline[k][l].wall = true;							
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 
 	for(int i = 0; i < block.size(); i++){
 		for(int j = 0; j < block[i].size(); j++){
