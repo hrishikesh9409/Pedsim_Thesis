@@ -56,13 +56,16 @@ private:
 
 	std::vector<edge> edge_wall;
 	std::vector<edge> doorway;
-
+	std::vector<edge> dwall;
 	vertex wv;
 	vertex dr;
+	vertex dw;
 	std::vector<vertex> walls;
 	std::vector<vertex> doors;
+	std::vector<vertex> door_wall;
 	std::vector<std::vector<edge> > list_walls;
 	std::vector<std::vector<edge> > list_doors;
+	std::vector<std::vector<edge> > list_door_wall;
 
 	void cell_structure_allocation(vertex start, vertex end[], int size);
 	void vertical_cell_allocation(vertex start, vertex end[], int size);
@@ -75,6 +78,8 @@ private:
 	void door_allocation();
 	void door_assignment(std::vector<vertex> doors);
 	void wall_inclusion();
+	void door_wall_translation();
+	void door_wall_assignment(std::vector<vertex> door_wall);
 	void door_inclusion();
 
 public:

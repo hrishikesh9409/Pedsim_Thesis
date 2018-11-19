@@ -11,6 +11,9 @@ int vertical_cell_allocation_block = 14;
 int non_standard_vertical_cell_allocation = 18;
 
 int cell_no = 1;
+int door_count = 0;
+int wall_count = 0;
+int tc = 0;
 
 Coppito::Coppito(){
 	for(int i = 0; i < 8; i++){
@@ -45,22 +48,38 @@ void Coppito::print_cells(){
 		}
 		cout << endl << endl << endl;
 	}
+
+	//cout << door_count << endl;
+	//cout << wall_count << endl;
 }
 
-// void Coppito::door_inclusion(){
-// 	for(int i = 0; i < block.size(); i++){
-// 		for(int j = 0; j < block[i].size(); j++){
-// 			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
-// 				for(int l = 0; l < 4; l++){
-// 					if((block[i][j].cell_outline[k][l].startx == -120.0 && block[i][j].cell_outline[k][l].starty == -60.0) && 
-// 						(block[i][j].cell_outline[k][l].endx == -97.5 && block[i][j].cell_outline[k][l].endy == -60.0) && block[i][j].cell_outline[k][l].wall == true){
-// 						block[i][j].cell_outline[k][l].door = true;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+void Coppito::door_inclusion(){
+	for(int i = 0; i < block.size(); i++){
+		for(int j = 0; j < block[i].size(); j++){
+			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
+				for(int l = 0; l < 4; l++){
+					for(int m = 0; m < list_door_wall.size(); m++){
+						for(int n = 0; n < list_door_wall[m].size(); n++){
+							if((block[i][j].cell_outline[k][l].startx == list_door_wall[m][n].startx && block[i][j].cell_outline[k][l].starty == list_door_wall[m][n].starty && block[i][j].cell_outline[k][l].endx == list_door_wall[m][n].endx && block[i][j].cell_outline[k][l].endy == list_door_wall[m][n].endy) || 
+								(block[i][j].cell_outline[k][l].startx == list_door_wall[m][n].endx && block[i][j].cell_outline[k][l].starty == list_door_wall[m][n].endy && block[i][j].cell_outline[k][l].endx == list_door_wall[m][n].startx && block[i][j].cell_outline[k][l].endy == list_door_wall[m][n].starty) || 
+								(block[i][j].cell_outline[k][l].startx == list_door_wall[m][n].startx && block[i][j].cell_outline[k][l].starty == list_door_wall[m][n].endy && block[i][j].cell_outline[k][l].endx == list_door_wall[m][n].endx && block[i][j].cell_outline[k][l].endy == list_door_wall[m][n].starty) ||
+								(block[i][j].cell_outline[k][l].startx == list_door_wall[m][n].endx && block[i][j].cell_outline[k][l].starty == list_door_wall[m][n].starty && block[i][j].cell_outline[k][l].endx == list_door_wall[m][n].startx && block[i][j].cell_outline[k][l].endy == list_door_wall[m][n].endy) && 
+								(block[i][j].cell_outline[k][l].wall == true)){
+								block[i][j].cell_outline[k][l].door = true;
+								// if(block[i][j].cell_outline[k][l].door == true){
+								// 	tc++;
+								// 	cout << tc <<  " (" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
+								// }
+								door_count++;
+								//cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 void Coppito::wall_inclusion(){
 	for(int i = 0; i < block.size(); i++){
@@ -72,6 +91,7 @@ void Coppito::wall_inclusion(){
 							if((block[i][j].cell_outline[k][l].startx == list_walls[m][n].startx && block[i][j].cell_outline[k][l].starty == list_walls[m][n].starty && block[i][j].cell_outline[k][l].endx == list_walls[m][n].endx && block[i][j].cell_outline[k][l].endy == list_walls[m][n].endy)||
 								(block[i][j].cell_outline[k][l].startx == list_walls[m][n].endx && block[i][j].cell_outline[k][l].starty == list_walls[m][n].endy && block[i][j].cell_outline[k][l].endx == list_walls[m][n].startx && block[i][j].cell_outline[k][l].endy == list_walls[m][n].starty)){
 								block[i][j].cell_outline[k][l].wall = true;
+								wall_count++;
 								//cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
 							}
 						}
@@ -165,54 +185,54 @@ void Coppito::wall_inclusion(){
 	}
 
 
-	for(int i = 0; i < block.size(); i++){
-		for(int j = 0; j < block[i].size(); j++){
-			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
-				for(int l = 0; l < 4; l++){
-					for(int m = 0; m < list_doors.size(); m++){
-						for(int n = 0; n < list_doors[m].size(); n++){
-							if(block[i][j].cell_outline[k][l].startx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
-								if(block[i][j].cell_outline[k][l].starty == list_doors[m][n].starty){
-									if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].endx){
-										block[i][j].cell_outline[k][l].door = true;
-										continue;
-									}
-									else if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].endy){
-										block[i][j].cell_outline[k][l].door = true;
-										continue;
-									}
-								}
-							}
-							else if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
-								if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].starty){
-									if(block[i][j].cell_outline[k][l].starty == list_doors[m][n].starty){
-										block[i][j].cell_outline[k][l].door = true;
-										continue;
-									}
-									else if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].endx){
-										block[i][j].cell_outline[k][l].door = true;
-										continue;
-									}
-								}
-							}
-							// else if(block[i][j].cell_outline[k][l].startx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
-							// 	if(list_doors[m][n].endy > block[i][j].cell_outline[k][l].endy && list_doors[m][n].endy < block[i][j].cell_outline[k][l+1].endy){
-							// 		block[i][j].cell_outline[k][l].door = true;
-							// 		continue;
-							// 	}
-							// }
-							// else if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].endy && block[i][j].cell_outline[k][l].wall == true){
-							// 	if(list_doors[m][n].startx > block[i][j].cell_outline[k][l].startx && list_doors[m][n].startx < block[i][j].cell_outline[k][l+1].startx){
-							// 		block[i][j].cell_outline[k][l].door = true;
-							// 		continue;
-							// 	}
-							// }
-						}
-					}
-				}
-			}
-		}
-	}	
+	// for(int i = 0; i < block.size(); i++){
+	// 	for(int j = 0; j < block[i].size(); j++){
+	// 		for(int k = 0; k < block[i][j].cell_outline.size(); k++){
+	// 			for(int l = 0; l < 4; l++){
+	// 				for(int m = 0; m < list_doors.size(); m++){
+	// 					for(int n = 0; n < list_doors[m].size(); n++){
+	// 						if(block[i][j].cell_outline[k][l].startx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
+	// 							if(block[i][j].cell_outline[k][l].starty == list_doors[m][n].starty){
+	// 								if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].endx){
+	// 									block[i][j].cell_outline[k][l].door = true;
+	// 									continue;
+	// 								}
+	// 								else if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].endy){
+	// 									block[i][j].cell_outline[k][l].door = true;
+	// 									continue;
+	// 								}
+	// 							}
+	// 						}
+	// 						else if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
+	// 							if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].starty){
+	// 								if(block[i][j].cell_outline[k][l].starty == list_doors[m][n].starty){
+	// 									block[i][j].cell_outline[k][l].door = true;
+	// 									continue;
+	// 								}
+	// 								else if(block[i][j].cell_outline[k][l].endx == list_doors[m][n].endx){
+	// 									block[i][j].cell_outline[k][l].door = true;
+	// 									continue;
+	// 								}
+	// 							}
+	// 						}
+	// 						// else if(block[i][j].cell_outline[k][l].startx == list_doors[m][n].startx && block[i][j].cell_outline[k][l].wall == true){
+	// 						// 	if(list_doors[m][n].endy > block[i][j].cell_outline[k][l].endy && list_doors[m][n].endy < block[i][j].cell_outline[k][l+1].endy){
+	// 						// 		block[i][j].cell_outline[k][l].door = true;
+	// 						// 		continue;
+	// 						// 	}
+	// 						// }
+	// 						// else if(block[i][j].cell_outline[k][l].endy == list_doors[m][n].endy && block[i][j].cell_outline[k][l].wall == true){
+	// 						// 	if(list_doors[m][n].startx > block[i][j].cell_outline[k][l].startx && list_doors[m][n].startx < block[i][j].cell_outline[k][l+1].startx){
+	// 						// 		block[i][j].cell_outline[k][l].door = true;
+	// 						// 		continue;
+	// 						// 	}
+	// 						// }
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }	
 
 // 	for(int i = 0; i < block.size(); i++){
 // 		cout << "Block :" << i << endl;
@@ -229,6 +249,465 @@ void Coppito::wall_inclusion(){
 // 	}
 }
 
+void Coppito::door_wall_assignment(std::vector<vertex> door_wall){
+	edge temp_door_wall;
+
+	temp_door_wall.startx = door_wall[0].x;
+	temp_door_wall.starty = door_wall[0].y;
+	temp_door_wall.endx = door_wall.back().x;
+	temp_door_wall.endy = door_wall.back().y;
+
+	dwall.push_back(temp_door_wall);
+	list_door_wall.push_back(dwall);
+	dwall.clear();
+}
+
+
+void Coppito::door_wall_translation(){
+	
+	//DOOR_WALL 0:
+	dw.x = -120.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -97.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	// for(int i = 0; i < door_wall.size(); i++){
+	// 	cout << door_wall[i].x << ", " << door_wall[i].y << endl;
+	// }
+
+	//DOOR_WALL 1:
+	dw.x = -97.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -75.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 2:
+	dw.x = -75.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -52.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 3:
+	dw.x = -52.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -30.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 4:
+	dw.x = -30.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -7.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 5:
+	dw.x = 7.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 30.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 6:
+	dw.x = 30;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 52.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 7:
+	dw.x = 52.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 75.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 8:
+	dw.x = 75.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 97.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 9:
+	dw.x = 97.5;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 120.0;
+	dw.y = -60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 10:
+	dw.x = -97.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -75.0;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 11:
+	dw.x = -75.0;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -52.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 12:
+	dw.x = -52.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -30.0;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 13:
+	dw.x = -30.0;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -7.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 14:
+	dw.x = 7.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 30.0;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 15:
+	dw.x = 30.0;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 52.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 16:
+	dw.x = -97.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -75.0;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 17:
+	dw.x = -75.0;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -52.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 18:
+	dw.x = -52.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -30.0;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 19:
+	dw.x = -30.0;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -7.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 20:
+	dw.x = 7.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 30.0;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 21:
+	dw.x = 30.0;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 52.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 22:
+	dw.x = -52.5;
+	dw.y = -15.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -52.5;
+	dw.y = 0.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 23:
+	dw.x = -7.5;
+	dw.y = -15.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -7.5;
+	dw.y = 0.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 24:
+	dw.x = 75.0;
+	dw.y = -30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 97.5;
+	dw.y = -30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 25:
+	dw.x = 97.5;
+	dw.y = -15.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 120.0;
+	dw.y = -15.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 26:
+	dw.x = 52.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 52.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 27:
+	dw.x = -112.5;
+	dw.y = -30.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -112.5;
+	dw.y = -15.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 28:
+	dw.x = -112.5;
+	dw.y = 15.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -112.5;
+	dw.y = 30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 29:
+	dw.x = -112.5;
+	dw.y = 45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -112.5;
+	dw.y = 60.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 30:
+	dw.x = -112.5;
+	dw.y = 75.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -112.5;
+	dw.y = 90.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 31:
+	dw.x = -120.0;
+	dw.y = -45.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = -120.0;
+	dw.y = -30.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+	//DOOR_WALL 32:
+	dw.x = -7.5;
+	dw.y = 75.0;
+
+	door_wall.push_back(dw);
+
+	dw.x = 7.5;
+	dw.y = 75.0;
+
+	door_wall.push_back(dw);
+	door_wall_assignment(door_wall);
+	door_wall.clear();
+
+
+	// cout << endl;
+	// for(int i = 0; i < list_door_wall.size(); i++){
+	// 	cout << "Door_wall Number " << i << " :" << endl; 
+	// 	for(int j = 0; j < list_door_wall[i].size(); j++){
+	// 		cout << list_door_wall[i][j].startx << ", " << list_door_wall[i][j].starty << " --> " << list_door_wall[i][j].endx << ", " << list_door_wall[i][j].endy << endl;
+	// 	}
+	// 	cout << endl << endl;
+	// }
+}
 
 void Coppito::door_assignment(std::vector<vertex> doors){
 	edge temp_door;
@@ -2180,6 +2659,8 @@ void Coppito::divide_Cells(){
 
 	door_allocation();
 
+	door_wall_translation();
+
 	// for(int i  = 0; i < cell.size(); i++){
 	// 	cout << "CELL NO. : " << i + 1 << endl;
 	// 	for(int j = 0; j < 4; j++){
@@ -2189,7 +2670,7 @@ void Coppito::divide_Cells(){
 	// }
 
 	wall_inclusion();
-	//door_inclusion();
+	door_inclusion();
 	print_cells();
 }
 
