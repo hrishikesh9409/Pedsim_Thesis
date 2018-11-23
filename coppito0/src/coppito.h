@@ -52,6 +52,7 @@ private:
 	std::vector<vertex> edge_vertices;
 	std::vector<cell_structure> cell;
 	std::vector<std::vector<cell_structure> > block;
+	std::vector<std::vector<cell_structure> > temp_block;
 
 
 	std::vector<edge> edge_wall;
@@ -81,6 +82,8 @@ private:
 	void door_wall_translation();
 	void door_wall_assignment(std::vector<vertex> door_wall);
 	void door_inclusion();
+
+	void graph_formation();
 
 public:
 	Coppito();

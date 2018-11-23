@@ -13,7 +13,7 @@ int non_standard_vertical_cell_allocation = 18;
 int cell_no = 1;
 int door_count = 0;
 int wall_count = 0;
-int tc = 0;
+//int tc = 0;
 
 Coppito::Coppito(){
 	for(int i = 0; i < 8; i++){
@@ -36,9 +36,9 @@ void Coppito::print_cells(){
 		cout << "Block :" << i << endl;
 		for(int j = 0; j < block[i].size(); j++){
 			cout << "Cell Number :" << block[i][j].cell_number << endl;
-			// for(int p = 0; p < 8; p++){
-			// 	cout << "Cell Next :" << block[i][j].cell_next[p] << endl;
-			// }
+			for(int p = 0; p < 8; p++){
+				cout << "Cell Next :" << block[i][j].cell_next[p] << endl;
+			}
 			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
 				for(int l = 0; l < 4; l++){
 					cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
@@ -51,6 +51,71 @@ void Coppito::print_cells(){
 
 	//cout << door_count << endl;
 	//cout << wall_count << endl;
+}
+
+void Coppito::graph_formation(){
+	temp_block = block;
+
+	/*for(int i = 0; i < temp_block.size(); i++){
+		cout << "TEMP Block :" << i << endl;
+		for(int j = 0; j < temp_block[i].size(); j++){
+			cout << "Cell Number :" << temp_block[i][j].cell_number << endl;
+			for(int k = 0; k < temp_block[i][j].cell_outline.size(); k++){
+				for(int l = 0; l < 4; l++){
+					cout << "(" << temp_block[i][j].cell_outline[k][l].startx << "," << temp_block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << temp_block[i][j].cell_outline[k][l].endx << "," << temp_block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << temp_block[i][j].cell_outline[k][l].wall << "\tdoor = " << temp_block[i][j].cell_outline[k][l].door << endl;
+
+				}
+				cout << endl;
+			}
+		}
+		cout << endl << endl << endl;
+	}*/
+
+	for(int i = 0; i < block.size(); i++){
+		for(int j = 0; j < block[i].size(); j++){
+			int p = 0;
+			//cout << "Cell Number :" << block[i][j].cell_number << endl;
+			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
+				for(int l = 0; l < 4; l++){
+					for(int a = 0; a < temp_block.size(); a++){
+						for(int b = 0; b < temp_block[a].size(); b++){
+							for(int c = 0; c < temp_block[a][b].cell_outline.size(); c++){
+								for(int d = 0; d < 4; d++){
+									if(block[i][j].cell_outline[k][l].startx == temp_block[a][b].cell_outline[c][d].endx && 
+										block[i][j].cell_outline[k][l].starty == temp_block[a][b].cell_outline[c][d].endy &&
+										block[i][j].cell_outline[k][l].endx == temp_block[a][b].cell_outline[c][d].startx &&
+										block[i][j].cell_outline[k][l].endy == temp_block[a][b].cell_outline[c][d].starty){
+										if(temp_block[a][b].cell_outline[c][d].wall != true){
+											if(block[i][j].cell_number != temp_block[a][b].cell_number){
+/*												cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
+*/												//cout << "Cell Number :" << block[i][j].cell_number << endl;
+												//cout << temp_block[a][b].cell_number << endl << endl;
+												block[i][j].cell_next[p] = temp_block[a][b].cell_number;
+												p++;
+											}
+										}
+										else if(temp_block[i][j].cell_outline[c][d].wall == true){
+											if(temp_block[i][j].cell_outline[c][d].door == true){
+												if(block[i][j].cell_number != temp_block[a][b].cell_number){
+/*												cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
+*/												//cout << "Cell Number :" << block[i][j].cell_number << endl;
+												//cout << temp_block[a][b].cell_number << endl << endl;
+												block[i][j].cell_next[p] = temp_block[a][b].cell_number;
+												p++;
+												}
+											}
+											else
+												continue;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 void Coppito::door_inclusion(){
@@ -2671,6 +2736,9 @@ void Coppito::divide_Cells(){
 
 	wall_inclusion();
 	door_inclusion();
+
+	graph_formation();
+
 	print_cells();
 }
 
