@@ -94,8 +94,35 @@ void Coppito::graph_formation(){
 												p++;
 											}
 										}
-										else if(temp_block[i][j].cell_outline[c][d].wall == true){
-											if(temp_block[i][j].cell_outline[c][d].door == true){
+										else if(temp_block[a][b].cell_outline[c][d].wall == true){
+											if(temp_block[a][b].cell_outline[c][d].door == true){
+												if(block[i][j].cell_number != temp_block[a][b].cell_number){
+/*												cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
+*/												//cout << "Cell Number :" << block[i][j].cell_number << endl;
+												//cout << temp_block[a][b].cell_number << endl << endl;
+												block[i][j].cell_next[p] = temp_block[a][b].cell_number;
+												p++;
+												}
+											}
+											else
+												continue;
+										}
+									}
+									else if(block[i][j].cell_outline[k][l].startx == temp_block[a][b].cell_outline[c][d].startx && 
+										block[i][j].cell_outline[k][l].starty == temp_block[a][b].cell_outline[c][d].starty &&
+										block[i][j].cell_outline[k][l].endx == temp_block[a][b].cell_outline[c][d].endx &&
+										block[i][j].cell_outline[k][l].endy == temp_block[a][b].cell_outline[c][d].endy){
+										if(temp_block[a][b].cell_outline[c][d].wall != true){
+											if(block[i][j].cell_number != temp_block[a][b].cell_number){
+/*												cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
+*/												//cout << "Cell Number :" << block[i][j].cell_number << endl;
+												//cout << temp_block[a][b].cell_number << endl << endl;
+												block[i][j].cell_next[p] = temp_block[a][b].cell_number;
+												p++;
+											}
+										}
+										else if(temp_block[a][b].cell_outline[c][d].wall == true){
+											if(temp_block[a][b].cell_outline[c][d].door == true){
 												if(block[i][j].cell_number != temp_block[a][b].cell_number){
 /*												cout << "(" << block[i][j].cell_outline[k][l].startx << "," << block[i][j].cell_outline[k][l].starty << ")" << " --> " << "(" << block[i][j].cell_outline[k][l].endx << "," << block[i][j].cell_outline[k][l].endy << ")" << "\t\twall = " << block[i][j].cell_outline[k][l].wall << "\tdoor = " << block[i][j].cell_outline[k][l].door << endl;
 */												//cout << "Cell Number :" << block[i][j].cell_number << endl;

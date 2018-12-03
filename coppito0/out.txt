@@ -1,0 +1,1748 @@
+cd src/ && ( test -e Makefile || /usr/lib/x86_64-linux-gnu/qt5/bin/qmake /home/hrishi/Documents/pedsim/ecosystem/demoapp/src/src.pro -o Makefile ) && make -f Makefile 
+make[1]: Entering directory '/home/hrishi/Documents/pedsim/ecosystem/coppito0/src'
+g++ -c -m64 -pipe -O2 -std=c++0x -Wall -W -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -ggdb -I. -I. -I../../../libpedsim -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -o coppito.o coppito.cpp
+g++ -m64 -Wl,-O1 -o ../pedsim agent.o main.o mainwindow.o obstacle.o control.o waypoint.o config.o scene.o tree.o loadscene.o grid.o cell.o coppito.o ped_agent.o ped_obstacle.o ped_outputwriter.o ped_scene.o ped_tree.o ped_vector.o ped_waypoint.o qrc_application.o moc_mainwindow.o moc_control.o moc_config.o moc_scene.o moc_loadscene.o   -L/usr/X11R6/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
+make[1]: Leaving directory '/home/hrishi/Documents/pedsim/ecosystem/coppito0/src'
+
+Block :0
+Cell Number :1
+Cell Next :6
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-120,-90) --> (-97.5,-90)		wall = 1	door = 0
+(-97.5,-90) --> (-97.5,-75)		wall = 1	door = 0
+(-97.5,-75) --> (-120,-75)		wall = 0	door = 0
+(-120,-75) --> (-120,-90)		wall = 1	door = 0
+
+Cell Number :2
+Cell Next :7
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,-90) --> (-75,-90)		wall = 1	door = 0
+(-75,-90) --> (-75,-75)		wall = 1	door = 0
+(-75,-75) --> (-97.5,-75)		wall = 0	door = 0
+(-97.5,-75) --> (-97.5,-90)		wall = 1	door = 0
+
+Cell Number :3
+Cell Next :8
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,-90) --> (-52.5,-90)		wall = 1	door = 0
+(-52.5,-90) --> (-52.5,-75)		wall = 1	door = 0
+(-52.5,-75) --> (-75,-75)		wall = 0	door = 0
+(-75,-75) --> (-75,-90)		wall = 1	door = 0
+
+Cell Number :4
+Cell Next :9
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,-90) --> (-30,-90)		wall = 1	door = 0
+(-30,-90) --> (-30,-75)		wall = 1	door = 0
+(-30,-75) --> (-52.5,-75)		wall = 0	door = 0
+(-52.5,-75) --> (-52.5,-90)		wall = 1	door = 0
+
+Cell Number :5
+Cell Next :10
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,-90) --> (-7.5,-90)		wall = 1	door = 0
+(-7.5,-90) --> (-7.5,-75)		wall = 1	door = 0
+(-7.5,-75) --> (-30,-75)		wall = 0	door = 0
+(-30,-75) --> (-30,-90)		wall = 1	door = 0
+
+Cell Number :6
+Cell Next :1
+Cell Next :76
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-120,-75) --> (-97.5,-75)		wall = 0	door = 0
+(-97.5,-75) --> (-97.5,-60)		wall = 1	door = 0
+(-97.5,-60) --> (-120,-60)		wall = 1	door = 1
+(-120,-60) --> (-120,-75)		wall = 1	door = 0
+
+Cell Number :7
+Cell Next :2
+Cell Next :77
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,-75) --> (-75,-75)		wall = 0	door = 0
+(-75,-75) --> (-75,-60)		wall = 1	door = 0
+(-75,-60) --> (-97.5,-60)		wall = 1	door = 1
+(-97.5,-60) --> (-97.5,-75)		wall = 1	door = 0
+
+Cell Number :8
+Cell Next :3
+Cell Next :78
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,-75) --> (-52.5,-75)		wall = 0	door = 0
+(-52.5,-75) --> (-52.5,-60)		wall = 1	door = 0
+(-52.5,-60) --> (-75,-60)		wall = 1	door = 1
+(-75,-60) --> (-75,-75)		wall = 1	door = 0
+
+Cell Number :9
+Cell Next :4
+Cell Next :79
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,-75) --> (-30,-75)		wall = 0	door = 0
+(-30,-75) --> (-30,-60)		wall = 1	door = 0
+(-30,-60) --> (-52.5,-60)		wall = 1	door = 1
+(-52.5,-60) --> (-52.5,-75)		wall = 1	door = 0
+
+Cell Number :10
+Cell Next :5
+Cell Next :80
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,-75) --> (-7.5,-75)		wall = 0	door = 0
+(-7.5,-75) --> (-7.5,-60)		wall = 1	door = 0
+(-7.5,-60) --> (-30,-60)		wall = 1	door = 1
+(-30,-60) --> (-30,-75)		wall = 1	door = 0
+
+
+
+
+Block :1
+Cell Number :11
+Cell Next :15
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,-90) --> (52.5,-90)		wall = 1	door = 0
+(52.5,-90) --> (52.5,-75)		wall = 1	door = 0
+(52.5,-75) --> (30,-75)		wall = 0	door = 0
+(30,-75) --> (30,-90)		wall = 1	door = 0
+
+Cell Number :12
+Cell Next :16
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,-90) --> (75,-90)		wall = 1	door = 0
+(75,-90) --> (75,-75)		wall = 1	door = 0
+(75,-75) --> (52.5,-75)		wall = 0	door = 0
+(52.5,-75) --> (52.5,-90)		wall = 1	door = 0
+
+Cell Number :13
+Cell Next :17
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,-90) --> (97.5,-90)		wall = 1	door = 0
+(97.5,-90) --> (97.5,-75)		wall = 1	door = 0
+(97.5,-75) --> (75,-75)		wall = 0	door = 0
+(75,-75) --> (75,-90)		wall = 1	door = 0
+
+Cell Number :14
+Cell Next :18
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(97.5,-90) --> (120,-90)		wall = 1	door = 0
+(120,-90) --> (120,-75)		wall = 1	door = 0
+(120,-75) --> (97.5,-75)		wall = 0	door = 0
+(97.5,-75) --> (97.5,-90)		wall = 1	door = 0
+
+Cell Number :15
+Cell Next :11
+Cell Next :82
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,-75) --> (52.5,-75)		wall = 0	door = 0
+(52.5,-75) --> (52.5,-60)		wall = 1	door = 0
+(52.5,-60) --> (30,-60)		wall = 1	door = 1
+(30,-60) --> (30,-75)		wall = 1	door = 0
+
+Cell Number :16
+Cell Next :12
+Cell Next :83
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,-75) --> (75,-75)		wall = 0	door = 0
+(75,-75) --> (75,-60)		wall = 1	door = 0
+(75,-60) --> (52.5,-60)		wall = 1	door = 1
+(52.5,-60) --> (52.5,-75)		wall = 1	door = 0
+
+Cell Number :17
+Cell Next :13
+Cell Next :84
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,-75) --> (97.5,-75)		wall = 0	door = 0
+(97.5,-75) --> (97.5,-60)		wall = 1	door = 0
+(97.5,-60) --> (75,-60)		wall = 1	door = 1
+(75,-60) --> (75,-75)		wall = 1	door = 0
+
+Cell Number :18
+Cell Next :14
+Cell Next :85
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(97.5,-75) --> (120,-75)		wall = 0	door = 0
+(120,-75) --> (120,-60)		wall = 1	door = 0
+(120,-60) --> (97.5,-60)		wall = 1	door = 1
+(97.5,-60) --> (97.5,-75)		wall = 1	door = 0
+
+
+
+
+Block :2
+Cell Number :19
+Cell Next :20
+Cell Next :23
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,-45) --> (-75,-45)		wall = 1	door = 0
+(-75,-45) --> (-75,-30)		wall = 0	door = 0
+(-75,-30) --> (-97.5,-30)		wall = 0	door = 0
+(-97.5,-30) --> (-97.5,-45)		wall = 1	door = 0
+
+Cell Number :20
+Cell Next :24
+Cell Next :19
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,-45) --> (-52.5,-45)		wall = 1	door = 0
+(-52.5,-45) --> (-52.5,-30)		wall = 1	door = 0
+(-52.5,-30) --> (-75,-30)		wall = 0	door = 0
+(-75,-30) --> (-75,-45)		wall = 0	door = 0
+
+Cell Number :21
+Cell Next :22
+Cell Next :25
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,-45) --> (-30,-45)		wall = 1	door = 0
+(-30,-45) --> (-30,-30)		wall = 0	door = 0
+(-30,-30) --> (-52.5,-30)		wall = 0	door = 0
+(-52.5,-30) --> (-52.5,-45)		wall = 1	door = 0
+
+Cell Number :22
+Cell Next :26
+Cell Next :21
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,-45) --> (-7.5,-45)		wall = 1	door = 0
+(-7.5,-45) --> (-7.5,-30)		wall = 1	door = 0
+(-7.5,-30) --> (-30,-30)		wall = 0	door = 0
+(-30,-30) --> (-30,-45)		wall = 0	door = 0
+
+Cell Number :23
+Cell Next :19
+Cell Next :24
+Cell Next :27
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,-30) --> (-75,-30)		wall = 0	door = 0
+(-75,-30) --> (-75,-15)		wall = 0	door = 0
+(-75,-15) --> (-97.5,-15)		wall = 0	door = 0
+(-97.5,-15) --> (-97.5,-30)		wall = 1	door = 0
+
+Cell Number :24
+Cell Next :20
+Cell Next :28
+Cell Next :23
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,-30) --> (-52.5,-30)		wall = 0	door = 0
+(-52.5,-30) --> (-52.5,-15)		wall = 1	door = 0
+(-52.5,-15) --> (-75,-15)		wall = 0	door = 0
+(-75,-15) --> (-75,-30)		wall = 0	door = 0
+
+Cell Number :25
+Cell Next :21
+Cell Next :26
+Cell Next :29
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,-30) --> (-30,-30)		wall = 0	door = 0
+(-30,-30) --> (-30,-15)		wall = 0	door = 0
+(-30,-15) --> (-52.5,-15)		wall = 0	door = 0
+(-52.5,-15) --> (-52.5,-30)		wall = 1	door = 0
+
+Cell Number :26
+Cell Next :22
+Cell Next :30
+Cell Next :25
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,-30) --> (-7.5,-30)		wall = 0	door = 0
+(-7.5,-30) --> (-7.5,-15)		wall = 1	door = 0
+(-7.5,-15) --> (-30,-15)		wall = 0	door = 0
+(-30,-15) --> (-30,-30)		wall = 0	door = 0
+
+Cell Number :27
+Cell Next :23
+Cell Next :28
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,-15) --> (-75,-15)		wall = 0	door = 0
+(-75,-15) --> (-75,0)		wall = 0	door = 0
+(-75,0) --> (-97.5,0)		wall = 1	door = 0
+(-97.5,0) --> (-97.5,-15)		wall = 1	door = 0
+
+Cell Number :28
+Cell Next :24
+Cell Next :29
+Cell Next :27
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,-15) --> (-52.5,-15)		wall = 0	door = 0
+(-52.5,-15) --> (-52.5,0)		wall = 1	door = 1
+(-52.5,0) --> (-75,0)		wall = 1	door = 0
+(-75,0) --> (-75,-15)		wall = 0	door = 0
+
+Cell Number :29
+Cell Next :25
+Cell Next :30
+Cell Next :28
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,-15) --> (-30,-15)		wall = 0	door = 0
+(-30,-15) --> (-30,0)		wall = 0	door = 0
+(-30,0) --> (-52.5,0)		wall = 1	door = 0
+(-52.5,0) --> (-52.5,-15)		wall = 1	door = 1
+
+Cell Number :30
+Cell Next :26
+Cell Next :29
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,-15) --> (-7.5,-15)		wall = 0	door = 0
+(-7.5,-15) --> (-7.5,0)		wall = 1	door = 1
+(-7.5,0) --> (-30,0)		wall = 1	door = 0
+(-30,0) --> (-30,-15)		wall = 0	door = 0
+
+Cell Number :31
+Cell Next :35
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,0) --> (-75,0)		wall = 1	door = 0
+(-75,0) --> (-75,15)		wall = 1	door = 0
+(-75,15) --> (-97.5,15)		wall = 0	door = 0
+(-97.5,15) --> (-97.5,0)		wall = 1	door = 0
+
+Cell Number :32
+Cell Next :36
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,0) --> (-52.5,0)		wall = 1	door = 0
+(-52.5,0) --> (-52.5,15)		wall = 1	door = 0
+(-52.5,15) --> (-75,15)		wall = 0	door = 0
+(-75,15) --> (-75,0)		wall = 1	door = 0
+
+Cell Number :33
+Cell Next :37
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,0) --> (-30,0)		wall = 1	door = 0
+(-30,0) --> (-30,15)		wall = 1	door = 0
+(-30,15) --> (-52.5,15)		wall = 0	door = 0
+(-52.5,15) --> (-52.5,0)		wall = 1	door = 0
+
+Cell Number :34
+Cell Next :38
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,0) --> (-7.5,0)		wall = 1	door = 0
+(-7.5,0) --> (-7.5,15)		wall = 1	door = 0
+(-7.5,15) --> (-30,15)		wall = 0	door = 0
+(-30,15) --> (-30,0)		wall = 1	door = 0
+
+Cell Number :35
+Cell Next :31
+Cell Next :109
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,15) --> (-75,15)		wall = 0	door = 0
+(-75,15) --> (-75,30)		wall = 1	door = 0
+(-75,30) --> (-97.5,30)		wall = 1	door = 1
+(-97.5,30) --> (-97.5,15)		wall = 1	door = 0
+
+Cell Number :36
+Cell Next :32
+Cell Next :110
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,15) --> (-52.5,15)		wall = 0	door = 0
+(-52.5,15) --> (-52.5,30)		wall = 1	door = 0
+(-52.5,30) --> (-75,30)		wall = 1	door = 1
+(-75,30) --> (-75,15)		wall = 1	door = 0
+
+Cell Number :37
+Cell Next :33
+Cell Next :111
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,15) --> (-30,15)		wall = 0	door = 0
+(-30,15) --> (-30,30)		wall = 1	door = 0
+(-30,30) --> (-52.5,30)		wall = 1	door = 1
+(-52.5,30) --> (-52.5,15)		wall = 1	door = 0
+
+Cell Number :38
+Cell Next :34
+Cell Next :112
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,15) --> (-7.5,15)		wall = 0	door = 0
+(-7.5,15) --> (-7.5,30)		wall = 1	door = 0
+(-7.5,30) --> (-30,30)		wall = 1	door = 1
+(-30,30) --> (-30,15)		wall = 1	door = 0
+
+
+
+
+Block :3
+Cell Number :39
+Cell Next :40
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,-30) --> (-112.5,-30)		wall = 1	door = 0
+(-112.5,-30) --> (-112.5,-15)		wall = 1	door = 1
+(-112.5,-15) --> (-135,-15)		wall = 0	door = 0
+(-135,-15) --> (-135,-30)		wall = 1	door = 0
+
+Cell Number :40
+Cell Next :39
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,-15) --> (-112.5,-15)		wall = 0	door = 0
+(-112.5,-15) --> (-112.5,0)		wall = 1	door = 0
+(-112.5,0) --> (-135,0)		wall = 1	door = 0
+(-135,0) --> (-135,-15)		wall = 1	door = 0
+
+Cell Number :41
+Cell Next :42
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,0) --> (-112.5,0)		wall = 1	door = 0
+(-112.5,0) --> (-112.5,15)		wall = 1	door = 0
+(-112.5,15) --> (-135,15)		wall = 0	door = 0
+(-135,15) --> (-135,0)		wall = 1	door = 0
+
+Cell Number :42
+Cell Next :41
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,15) --> (-112.5,15)		wall = 0	door = 0
+(-112.5,15) --> (-112.5,30)		wall = 1	door = 1
+(-112.5,30) --> (-135,30)		wall = 1	door = 0
+(-135,30) --> (-135,15)		wall = 1	door = 0
+
+Cell Number :43
+Cell Next :44
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,30) --> (-112.5,30)		wall = 1	door = 0
+(-112.5,30) --> (-112.5,45)		wall = 1	door = 0
+(-112.5,45) --> (-135,45)		wall = 0	door = 0
+(-135,45) --> (-135,30)		wall = 1	door = 0
+
+Cell Number :44
+Cell Next :43
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,45) --> (-112.5,45)		wall = 0	door = 0
+(-112.5,45) --> (-112.5,60)		wall = 1	door = 1
+(-112.5,60) --> (-135,60)		wall = 1	door = 0
+(-135,60) --> (-135,45)		wall = 1	door = 0
+
+Cell Number :45
+Cell Next :46
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,60) --> (-112.5,60)		wall = 1	door = 0
+(-112.5,60) --> (-112.5,75)		wall = 1	door = 0
+(-112.5,75) --> (-135,75)		wall = 0	door = 0
+(-135,75) --> (-135,60)		wall = 1	door = 0
+
+Cell Number :46
+Cell Next :45
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-135,75) --> (-112.5,75)		wall = 0	door = 0
+(-112.5,75) --> (-112.5,90)		wall = 1	door = 1
+(-112.5,90) --> (-135,90)		wall = 1	door = 0
+(-135,90) --> (-135,75)		wall = 1	door = 0
+
+
+
+
+Block :4
+Cell Number :47
+Cell Next :109
+Cell Next :51
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,45) --> (-75,45)		wall = 1	door = 1
+(-75,45) --> (-75,60)		wall = 1	door = 0
+(-75,60) --> (-97.5,60)		wall = 0	door = 0
+(-97.5,60) --> (-97.5,45)		wall = 1	door = 0
+
+Cell Number :48
+Cell Next :110
+Cell Next :52
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,45) --> (-52.5,45)		wall = 1	door = 1
+(-52.5,45) --> (-52.5,60)		wall = 1	door = 0
+(-52.5,60) --> (-75,60)		wall = 0	door = 0
+(-75,60) --> (-75,45)		wall = 1	door = 0
+
+Cell Number :49
+Cell Next :111
+Cell Next :53
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,45) --> (-30,45)		wall = 1	door = 1
+(-30,45) --> (-30,60)		wall = 1	door = 0
+(-30,60) --> (-52.5,60)		wall = 0	door = 0
+(-52.5,60) --> (-52.5,45)		wall = 1	door = 0
+
+Cell Number :50
+Cell Next :112
+Cell Next :54
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,45) --> (-7.5,45)		wall = 1	door = 1
+(-7.5,45) --> (-7.5,60)		wall = 1	door = 0
+(-7.5,60) --> (-30,60)		wall = 0	door = 0
+(-30,60) --> (-30,45)		wall = 1	door = 0
+
+Cell Number :51
+Cell Next :47
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,60) --> (-75,60)		wall = 0	door = 0
+(-75,60) --> (-75,75)		wall = 1	door = 0
+(-75,75) --> (-97.5,75)		wall = 1	door = 0
+(-97.5,75) --> (-97.5,60)		wall = 1	door = 0
+
+Cell Number :52
+Cell Next :48
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,60) --> (-52.5,60)		wall = 0	door = 0
+(-52.5,60) --> (-52.5,75)		wall = 1	door = 0
+(-52.5,75) --> (-75,75)		wall = 1	door = 0
+(-75,75) --> (-75,60)		wall = 1	door = 0
+
+Cell Number :53
+Cell Next :49
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,60) --> (-30,60)		wall = 0	door = 0
+(-30,60) --> (-30,75)		wall = 1	door = 0
+(-30,75) --> (-52.5,75)		wall = 1	door = 0
+(-52.5,75) --> (-52.5,60)		wall = 1	door = 0
+
+Cell Number :54
+Cell Next :50
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,60) --> (-7.5,60)		wall = 0	door = 0
+(-7.5,60) --> (-7.5,75)		wall = 1	door = 0
+(-7.5,75) --> (-30,75)		wall = 1	door = 0
+(-30,75) --> (-30,60)		wall = 1	door = 0
+
+
+
+
+Block :5
+Cell Number :55
+Cell Next :113
+Cell Next :57
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(7.5,45) --> (30,45)		wall = 1	door = 1
+(30,45) --> (30,60)		wall = 1	door = 0
+(30,60) --> (7.5,60)		wall = 0	door = 0
+(7.5,60) --> (7.5,45)		wall = 1	door = 0
+
+Cell Number :56
+Cell Next :114
+Cell Next :58
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,45) --> (52.5,45)		wall = 1	door = 1
+(52.5,45) --> (52.5,60)		wall = 1	door = 0
+(52.5,60) --> (30,60)		wall = 0	door = 0
+(30,60) --> (30,45)		wall = 1	door = 0
+
+Cell Number :57
+Cell Next :55
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(7.5,60) --> (30,60)		wall = 0	door = 0
+(30,60) --> (30,75)		wall = 1	door = 0
+(30,75) --> (7.5,75)		wall = 1	door = 0
+(7.5,75) --> (7.5,60)		wall = 1	door = 0
+
+Cell Number :58
+Cell Next :56
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,60) --> (52.5,60)		wall = 0	door = 0
+(52.5,60) --> (52.5,75)		wall = 1	door = 0
+(52.5,75) --> (30,75)		wall = 1	door = 0
+(30,75) --> (30,60)		wall = 1	door = 0
+
+
+
+
+Block :6
+Cell Number :59
+Cell Next :61
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(7.5,0) --> (30,0)		wall = 1	door = 0
+(30,0) --> (30,15)		wall = 1	door = 0
+(30,15) --> (7.5,15)		wall = 0	door = 0
+(7.5,15) --> (7.5,0)		wall = 1	door = 0
+
+Cell Number :60
+Cell Next :62
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,0) --> (52.5,0)		wall = 1	door = 0
+(52.5,0) --> (52.5,15)		wall = 1	door = 0
+(52.5,15) --> (30,15)		wall = 0	door = 0
+(30,15) --> (30,0)		wall = 1	door = 0
+
+Cell Number :61
+Cell Next :59
+Cell Next :113
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(7.5,15) --> (30,15)		wall = 0	door = 0
+(30,15) --> (30,30)		wall = 1	door = 0
+(30,30) --> (7.5,30)		wall = 1	door = 1
+(7.5,30) --> (7.5,15)		wall = 1	door = 0
+
+Cell Number :62
+Cell Next :60
+Cell Next :114
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,15) --> (52.5,15)		wall = 0	door = 0
+(52.5,15) --> (52.5,30)		wall = 1	door = 0
+(52.5,30) --> (30,30)		wall = 1	door = 1
+(30,30) --> (30,15)		wall = 1	door = 0
+
+
+
+
+Block :7
+Cell Number :63
+Cell Next :64
+Cell Next :65
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,0) --> (75,0)		wall = 1	door = 0
+(75,0) --> (75,15)		wall = 0	door = 0
+(75,15) --> (52.5,15)		wall = 0	door = 0
+(52.5,15) --> (52.5,0)		wall = 1	door = 0
+
+Cell Number :64
+Cell Next :66
+Cell Next :63
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,0) --> (97.5,0)		wall = 1	door = 0
+(97.5,0) --> (97.5,15)		wall = 1	door = 0
+(97.5,15) --> (75,15)		wall = 0	door = 0
+(75,15) --> (75,0)		wall = 0	door = 0
+
+Cell Number :65
+Cell Next :63
+Cell Next :66
+Cell Next :67
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,15) --> (75,15)		wall = 0	door = 0
+(75,15) --> (75,30)		wall = 0	door = 0
+(75,30) --> (52.5,30)		wall = 0	door = 0
+(52.5,30) --> (52.5,15)		wall = 1	door = 0
+
+Cell Number :66
+Cell Next :64
+Cell Next :68
+Cell Next :65
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,15) --> (97.5,15)		wall = 0	door = 0
+(97.5,15) --> (97.5,30)		wall = 1	door = 0
+(97.5,30) --> (75,30)		wall = 0	door = 0
+(75,30) --> (75,15)		wall = 0	door = 0
+
+Cell Number :67
+Cell Next :65
+Cell Next :68
+Cell Next :69
+Cell Next :114
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,30) --> (75,30)		wall = 0	door = 0
+(75,30) --> (75,45)		wall = 0	door = 0
+(75,45) --> (52.5,45)		wall = 0	door = 0
+(52.5,45) --> (52.5,30)		wall = 1	door = 1
+
+Cell Number :68
+Cell Next :66
+Cell Next :70
+Cell Next :67
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,30) --> (97.5,30)		wall = 0	door = 0
+(97.5,30) --> (97.5,45)		wall = 1	door = 0
+(97.5,45) --> (75,45)		wall = 0	door = 0
+(75,45) --> (75,30)		wall = 0	door = 0
+
+Cell Number :69
+Cell Next :67
+Cell Next :70
+Cell Next :71
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,45) --> (75,45)		wall = 0	door = 0
+(75,45) --> (75,60)		wall = 0	door = 0
+(75,60) --> (52.5,60)		wall = 0	door = 0
+(52.5,60) --> (52.5,45)		wall = 1	door = 0
+
+Cell Number :70
+Cell Next :68
+Cell Next :72
+Cell Next :69
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,45) --> (97.5,45)		wall = 0	door = 0
+(97.5,45) --> (97.5,60)		wall = 1	door = 0
+(97.5,60) --> (75,60)		wall = 0	door = 0
+(75,60) --> (75,45)		wall = 0	door = 0
+
+Cell Number :71
+Cell Next :69
+Cell Next :72
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,60) --> (75,60)		wall = 0	door = 0
+(75,60) --> (75,75)		wall = 0	door = 0
+(75,75) --> (52.5,75)		wall = 1	door = 0
+(52.5,75) --> (52.5,60)		wall = 1	door = 0
+
+Cell Number :72
+Cell Next :70
+Cell Next :71
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,60) --> (97.5,60)		wall = 0	door = 0
+(97.5,60) --> (97.5,75)		wall = 1	door = 0
+(97.5,75) --> (75,75)		wall = 1	door = 0
+(75,75) --> (75,60)		wall = 0	door = 0
+
+
+
+
+Block :8
+Cell Number :73
+Cell Next :89
+Cell Next :74
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,-30) --> (97.5,-30)		wall = 1	door = 1
+(97.5,-30) --> (97.5,-15)		wall = 1	door = 0
+(97.5,-15) --> (75,-15)		wall = 0	door = 0
+(75,-15) --> (75,-30)		wall = 1	door = 0
+
+Cell Number :74
+Cell Next :73
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,-15) --> (97.5,-15)		wall = 0	door = 0
+(97.5,-15) --> (97.5,0)		wall = 1	door = 0
+(97.5,0) --> (75,0)		wall = 1	door = 0
+(75,0) --> (75,-15)		wall = 1	door = 0
+
+
+
+
+Block :9
+Cell Number :75
+Cell Next :90
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(97.5,-30) --> (120,-30)		wall = 0	door = 0
+(120,-30) --> (120,-15)		wall = 1	door = 0
+(120,-15) --> (97.5,-15)		wall = 1	door = 1
+(97.5,-15) --> (97.5,-30)		wall = 1	door = 0
+
+
+
+
+Block :10
+Cell Number :76
+Cell Next :6
+Cell Next :77
+Cell Next :115
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-120,-60) --> (-97.5,-60)		wall = 1	door = 1
+(-97.5,-60) --> (-97.5,-45)		wall = 0	door = 0
+(-97.5,-45) --> (-120,-45)		wall = 0	door = 0
+(-120,-45) --> (-120,-60)		wall = 1	door = 0
+
+Cell Number :77
+Cell Next :7
+Cell Next :78
+Cell Next :76
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,-60) --> (-75,-60)		wall = 1	door = 1
+(-75,-60) --> (-75,-45)		wall = 0	door = 0
+(-75,-45) --> (-97.5,-45)		wall = 1	door = 0
+(-97.5,-45) --> (-97.5,-60)		wall = 0	door = 0
+
+Cell Number :78
+Cell Next :8
+Cell Next :79
+Cell Next :77
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,-60) --> (-52.5,-60)		wall = 1	door = 1
+(-52.5,-60) --> (-52.5,-45)		wall = 0	door = 0
+(-52.5,-45) --> (-75,-45)		wall = 1	door = 0
+(-75,-45) --> (-75,-60)		wall = 0	door = 0
+
+Cell Number :79
+Cell Next :9
+Cell Next :80
+Cell Next :78
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,-60) --> (-30,-60)		wall = 1	door = 1
+(-30,-60) --> (-30,-45)		wall = 0	door = 0
+(-30,-45) --> (-52.5,-45)		wall = 1	door = 0
+(-52.5,-45) --> (-52.5,-60)		wall = 0	door = 0
+
+Cell Number :80
+Cell Next :10
+Cell Next :79
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,-60) --> (-7.5,-60)		wall = 1	door = 1
+(-7.5,-60) --> (-7.5,-45)		wall = 0	door = 0
+(-7.5,-45) --> (-30,-45)		wall = 1	door = 0
+(-30,-45) --> (-30,-60)		wall = 0	door = 0
+
+
+
+
+Block :11
+Cell Number :81
+Cell Next :82
+Cell Next :86
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(7.5,-60) --> (30,-60)		wall = 0	door = 1
+(30,-60) --> (30,-45)		wall = 0	door = 0
+(30,-45) --> (7.5,-45)		wall = 0	door = 0
+(7.5,-45) --> (7.5,-60)		wall = 0	door = 0
+
+Cell Number :82
+Cell Next :15
+Cell Next :83
+Cell Next :87
+Cell Next :81
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,-60) --> (52.5,-60)		wall = 1	door = 1
+(52.5,-60) --> (52.5,-45)		wall = 0	door = 0
+(52.5,-45) --> (30,-45)		wall = 0	door = 0
+(30,-45) --> (30,-60)		wall = 0	door = 0
+
+Cell Number :83
+Cell Next :16
+Cell Next :84
+Cell Next :88
+Cell Next :82
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,-60) --> (75,-60)		wall = 1	door = 1
+(75,-60) --> (75,-45)		wall = 0	door = 0
+(75,-45) --> (52.5,-45)		wall = 0	door = 0
+(52.5,-45) --> (52.5,-60)		wall = 0	door = 0
+
+Cell Number :84
+Cell Next :17
+Cell Next :85
+Cell Next :89
+Cell Next :83
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,-60) --> (97.5,-60)		wall = 1	door = 1
+(97.5,-60) --> (97.5,-45)		wall = 0	door = 0
+(97.5,-45) --> (75,-45)		wall = 0	door = 0
+(75,-45) --> (75,-60)		wall = 0	door = 0
+
+Cell Number :85
+Cell Next :18
+Cell Next :90
+Cell Next :84
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(97.5,-60) --> (120,-60)		wall = 1	door = 1
+(120,-60) --> (120,-45)		wall = 1	door = 0
+(120,-45) --> (97.5,-45)		wall = 0	door = 0
+(97.5,-45) --> (97.5,-60)		wall = 0	door = 0
+
+Cell Number :86
+Cell Next :81
+Cell Next :87
+Cell Next :91
+Cell Next :97
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(7.5,-45) --> (30,-45)		wall = 0	door = 0
+(30,-45) --> (30,-30)		wall = 0	door = 0
+(30,-30) --> (7.5,-30)		wall = 0	door = 0
+(7.5,-30) --> (7.5,-45)		wall = 0	door = 0
+
+Cell Number :87
+Cell Next :82
+Cell Next :88
+Cell Next :92
+Cell Next :98
+Cell Next :86
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,-45) --> (52.5,-45)		wall = 0	door = 0
+(52.5,-45) --> (52.5,-30)		wall = 0	door = 0
+(52.5,-30) --> (30,-30)		wall = 0	door = 0
+(30,-30) --> (30,-45)		wall = 0	door = 0
+
+Cell Number :88
+Cell Next :83
+Cell Next :89
+Cell Next :93
+Cell Next :99
+Cell Next :87
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(52.5,-45) --> (75,-45)		wall = 0	door = 0
+(75,-45) --> (75,-30)		wall = 0	door = 0
+(75,-30) --> (52.5,-30)		wall = 0	door = 0
+(52.5,-30) --> (52.5,-45)		wall = 0	door = 0
+
+Cell Number :89
+Cell Next :84
+Cell Next :90
+Cell Next :73
+Cell Next :88
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(75,-45) --> (97.5,-45)		wall = 0	door = 0
+(97.5,-45) --> (97.5,-30)		wall = 0	door = 0
+(97.5,-30) --> (75,-30)		wall = 1	door = 1
+(75,-30) --> (75,-45)		wall = 0	door = 0
+
+Cell Number :90
+Cell Next :85
+Cell Next :75
+Cell Next :89
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(97.5,-45) --> (120,-45)		wall = 0	door = 0
+(120,-45) --> (120,-30)		wall = 1	door = 0
+(120,-30) --> (97.5,-30)		wall = 0	door = 0
+(97.5,-30) --> (97.5,-45)		wall = 0	door = 0
+
+
+
+
+Block :12
+Cell Number :91
+Cell Next :86
+Cell Next :97
+Cell Next :92
+Cell Next :97
+Cell Next :98
+Cell Next :94
+Cell Next :97
+Cell Next :100
+(7.5,-30) --> (30,-30)		wall = 0	door = 0
+(30,-30) --> (30,-15)		wall = 0	door = 0
+(30,-15) --> (7.5,-15)		wall = 0	door = 0
+(7.5,-15) --> (7.5,-30)		wall = 0	door = 0
+
+Cell Number :92
+Cell Next :87
+Cell Next :98
+Cell Next :93
+Cell Next :98
+Cell Next :99
+Cell Next :95
+Cell Next :98
+Cell Next :101
+(30,-30) --> (52.5,-30)		wall = 0	door = 0
+(52.5,-30) --> (52.5,-15)		wall = 0	door = 0
+(52.5,-15) --> (30,-15)		wall = 0	door = 0
+(30,-15) --> (30,-30)		wall = 0	door = 0
+
+Cell Number :93
+Cell Next :88
+Cell Next :99
+Cell Next :96
+Cell Next :99
+Cell Next :102
+Cell Next :92
+Cell Next :98
+Cell Next :99
+(52.5,-30) --> (75,-30)		wall = 0	door = 0
+(75,-30) --> (75,-15)		wall = 1	door = 0
+(75,-15) --> (52.5,-15)		wall = 0	door = 0
+(52.5,-15) --> (52.5,-30)		wall = 0	door = 0
+
+Cell Number :94
+Cell Next :91
+Cell Next :97
+Cell Next :100
+Cell Next :95
+Cell Next :100
+Cell Next :101
+Cell Next :100
+Cell Next :999999
+(7.5,-15) --> (30,-15)		wall = 0	door = 0
+(30,-15) --> (30,0)		wall = 0	door = 0
+(30,0) --> (7.5,0)		wall = 1	door = 0
+(7.5,0) --> (7.5,-15)		wall = 0	door = 0
+
+Cell Number :95
+Cell Next :92
+Cell Next :98
+Cell Next :101
+Cell Next :96
+Cell Next :101
+Cell Next :102
+Cell Next :94
+Cell Next :100
+(30,-15) --> (52.5,-15)		wall = 0	door = 0
+(52.5,-15) --> (52.5,0)		wall = 0	door = 0
+(52.5,0) --> (30,0)		wall = 1	door = 0
+(30,0) --> (30,-15)		wall = 0	door = 0
+
+Cell Number :96
+Cell Next :93
+Cell Next :99
+Cell Next :102
+Cell Next :95
+Cell Next :101
+Cell Next :102
+Cell Next :999999
+Cell Next :999999
+(52.5,-15) --> (75,-15)		wall = 0	door = 0
+(75,-15) --> (75,0)		wall = 1	door = 0
+(75,0) --> (52.5,0)		wall = 1	door = 0
+(52.5,0) --> (52.5,-15)		wall = 0	door = 0
+
+
+
+
+Block :13
+Cell Number :97
+Cell Next :86
+Cell Next :91
+Cell Next :91
+Cell Next :92
+Cell Next :98
+Cell Next :91
+Cell Next :94
+Cell Next :100
+(7.5,-30) --> (30,-30)		wall = 0	door = 0
+(30,-30) --> (30,-15)		wall = 0	door = 0
+(30,-15) --> (7.5,-15)		wall = 0	door = 0
+(7.5,-15) --> (7.5,-30)		wall = 0	door = 0
+
+Cell Number :98
+Cell Next :87
+Cell Next :92
+Cell Next :92
+Cell Next :93
+Cell Next :99
+Cell Next :92
+Cell Next :95
+Cell Next :101
+(30,-30) --> (52.5,-30)		wall = 0	door = 0
+(52.5,-30) --> (52.5,-15)		wall = 0	door = 0
+(52.5,-15) --> (30,-15)		wall = 0	door = 0
+(30,-15) --> (30,-30)		wall = 0	door = 0
+
+Cell Number :99
+Cell Next :88
+Cell Next :93
+Cell Next :93
+Cell Next :96
+Cell Next :102
+Cell Next :92
+Cell Next :93
+Cell Next :98
+(52.5,-30) --> (75,-30)		wall = 0	door = 0
+(75,-30) --> (75,-15)		wall = 1	door = 0
+(75,-15) --> (52.5,-15)		wall = 0	door = 0
+(52.5,-15) --> (52.5,-30)		wall = 0	door = 0
+
+Cell Number :100
+Cell Next :91
+Cell Next :94
+Cell Next :97
+Cell Next :94
+Cell Next :95
+Cell Next :101
+Cell Next :94
+Cell Next :999999
+(7.5,-15) --> (30,-15)		wall = 0	door = 0
+(30,-15) --> (30,0)		wall = 0	door = 0
+(30,0) --> (7.5,0)		wall = 1	door = 0
+(7.5,0) --> (7.5,-15)		wall = 0	door = 0
+
+Cell Number :101
+Cell Next :92
+Cell Next :95
+Cell Next :98
+Cell Next :95
+Cell Next :96
+Cell Next :102
+Cell Next :94
+Cell Next :95
+(30,-15) --> (52.5,-15)		wall = 0	door = 0
+(52.5,-15) --> (52.5,0)		wall = 0	door = 0
+(52.5,0) --> (30,0)		wall = 1	door = 0
+(30,0) --> (30,-15)		wall = 0	door = 0
+
+Cell Number :102
+Cell Next :93
+Cell Next :96
+Cell Next :99
+Cell Next :95
+Cell Next :96
+Cell Next :101
+Cell Next :999999
+Cell Next :999999
+(52.5,-15) --> (75,-15)		wall = 0	door = 0
+(75,-15) --> (75,0)		wall = 1	door = 0
+(75,0) --> (52.5,0)		wall = 1	door = 0
+(52.5,0) --> (52.5,-15)		wall = 0	door = 0
+
+
+
+
+Block :14
+Cell Number :103
+Cell Next :104
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-7.5,-60) --> (7.5,-60)		wall = 1	door = 0
+(7.5,-60) --> (7.5,-37.5)		wall = 0	door = 0
+(7.5,-37.5) --> (-7.5,-37.5)		wall = 0	door = 0
+(-7.5,-37.5) --> (-7.5,-60)		wall = 0	door = 0
+
+Cell Number :104
+Cell Next :103
+Cell Next :105
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-7.5,-37.5) --> (7.5,-37.5)		wall = 0	door = 0
+(7.5,-37.5) --> (7.5,-15)		wall = 0	door = 0
+(7.5,-15) --> (-7.5,-15)		wall = 0	door = 0
+(-7.5,-15) --> (-7.5,-37.5)		wall = 1	door = 0
+
+Cell Number :105
+Cell Next :104
+Cell Next :106
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-7.5,-15) --> (7.5,-15)		wall = 0	door = 0
+(7.5,-15) --> (7.5,7.5)		wall = 0	door = 0
+(7.5,7.5) --> (-7.5,7.5)		wall = 0	door = 0
+(-7.5,7.5) --> (-7.5,-15)		wall = 1	door = 0
+
+Cell Number :106
+Cell Next :105
+Cell Next :107
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-7.5,7.5) --> (7.5,7.5)		wall = 0	door = 0
+(7.5,7.5) --> (7.5,30)		wall = 1	door = 0
+(7.5,30) --> (-7.5,30)		wall = 0	door = 0
+(-7.5,30) --> (-7.5,7.5)		wall = 1	door = 0
+
+Cell Number :107
+Cell Next :106
+Cell Next :108
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-7.5,30) --> (7.5,30)		wall = 0	door = 0
+(7.5,30) --> (7.5,52.5)		wall = 0	door = 0
+(7.5,52.5) --> (-7.5,52.5)		wall = 0	door = 0
+(-7.5,52.5) --> (-7.5,30)		wall = 0	door = 0
+
+Cell Number :108
+Cell Next :107
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-7.5,52.5) --> (7.5,52.5)		wall = 0	door = 0
+(7.5,52.5) --> (7.5,75)		wall = 1	door = 0
+(7.5,75) --> (-7.5,75)		wall = 1	door = 1
+(-7.5,75) --> (-7.5,52.5)		wall = 1	door = 0
+
+
+
+
+Block :15
+Cell Number :109
+Cell Next :35
+Cell Next :110
+Cell Next :47
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-97.5,30) --> (-75,30)		wall = 1	door = 1
+(-75,30) --> (-75,45)		wall = 0	door = 0
+(-75,45) --> (-97.5,45)		wall = 1	door = 1
+(-97.5,45) --> (-97.5,30)		wall = 0	door = 0
+
+Cell Number :110
+Cell Next :36
+Cell Next :111
+Cell Next :48
+Cell Next :109
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-75,30) --> (-52.5,30)		wall = 1	door = 1
+(-52.5,30) --> (-52.5,45)		wall = 0	door = 0
+(-52.5,45) --> (-75,45)		wall = 1	door = 1
+(-75,45) --> (-75,30)		wall = 0	door = 0
+
+Cell Number :111
+Cell Next :37
+Cell Next :112
+Cell Next :49
+Cell Next :110
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-52.5,30) --> (-30,30)		wall = 1	door = 1
+(-30,30) --> (-30,45)		wall = 0	door = 0
+(-30,45) --> (-52.5,45)		wall = 1	door = 1
+(-52.5,45) --> (-52.5,30)		wall = 0	door = 0
+
+Cell Number :112
+Cell Next :38
+Cell Next :50
+Cell Next :111
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-30,30) --> (-7.5,30)		wall = 1	door = 1
+(-7.5,30) --> (-7.5,45)		wall = 0	door = 0
+(-7.5,45) --> (-30,45)		wall = 1	door = 1
+(-30,45) --> (-30,30)		wall = 0	door = 0
+
+
+
+
+Block :16
+Cell Number :113
+Cell Next :61
+Cell Next :114
+Cell Next :55
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(7.5,30) --> (30,30)		wall = 1	door = 1
+(30,30) --> (30,45)		wall = 0	door = 0
+(30,45) --> (7.5,45)		wall = 1	door = 1
+(7.5,45) --> (7.5,30)		wall = 0	door = 0
+
+Cell Number :114
+Cell Next :62
+Cell Next :67
+Cell Next :56
+Cell Next :113
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(30,30) --> (52.5,30)		wall = 1	door = 1
+(52.5,30) --> (52.5,45)		wall = 1	door = 1
+(52.5,45) --> (30,45)		wall = 1	door = 1
+(30,45) --> (30,30)		wall = 0	door = 0
+
+
+
+
+Block :17
+Cell Number :115
+Cell Next :76
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-120,-45) --> (-97.5,-45)		wall = 0	door = 0
+(-97.5,-45) --> (-97.5,-30)		wall = 1	door = 0
+(-97.5,-30) --> (-120,-30)		wall = 0	door = 0
+(-120,-30) --> (-120,-45)		wall = 1	door = 1
+
+
+
+
+Block :18
+Cell Number :116
+Cell Next :117
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-112.5,-30) --> (-97.5,-30)		wall = 0	door = 0
+(-97.5,-30) --> (-97.5,0)		wall = 1	door = 0
+(-97.5,0) --> (-112.5,0)		wall = 0	door = 0
+(-112.5,0) --> (-112.5,-30)		wall = 1	door = 0
+
+Cell Number :117
+Cell Next :116
+Cell Next :118
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-112.5,0) --> (-97.5,0)		wall = 0	door = 0
+(-97.5,0) --> (-97.5,30)		wall = 1	door = 0
+(-97.5,30) --> (-112.5,30)		wall = 0	door = 0
+(-112.5,30) --> (-112.5,0)		wall = 1	door = 0
+
+Cell Number :118
+Cell Next :117
+Cell Next :119
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-112.5,30) --> (-97.5,30)		wall = 0	door = 0
+(-97.5,30) --> (-97.5,60)		wall = 1	door = 0
+(-97.5,60) --> (-112.5,60)		wall = 0	door = 0
+(-112.5,60) --> (-112.5,30)		wall = 1	door = 0
+
+Cell Number :119
+Cell Next :118
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+Cell Next :999999
+(-112.5,60) --> (-97.5,60)		wall = 0	door = 0
+(-97.5,60) --> (-97.5,90)		wall = 1	door = 0
+(-97.5,90) --> (-112.5,90)		wall = 0	door = 0
+(-112.5,90) --> (-112.5,60)		wall = 1	door = 0
+
+
+
+
