@@ -98,6 +98,8 @@ namespace Ped {
         bool reachedDestination() { return (destination == NULL); };
         void setWaypointBehavior(int mode) { waypointbehavior = mode; };
 
+        void exitStrategy();
+
         enum WaypointBehavior {
             BEHAVIOR_CIRCULAR = 0,
             BEHAVIOR_ONCE = 1

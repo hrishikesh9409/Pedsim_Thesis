@@ -39,6 +39,7 @@ private:
 
 	vertex v[4];
 	vertex start;
+	vertex special_vertices;
 	
 	//Temporary structures to hold the values of start.x and start.y
 	vertex temp;
@@ -49,6 +50,7 @@ private:
 	edge e;
 	cell_structure cs;
 	
+	std::vector<vertex> special_cells;
 	std::vector<vertex> edge_vertices;
 	std::vector<cell_structure> cell;
 	std::vector<std::vector<cell_structure> > block;
@@ -58,6 +60,7 @@ private:
 	std::vector<edge> edge_wall;
 	std::vector<edge> doorway;
 	std::vector<edge> dwall;
+	std::vector<edge> special_graph_cell;
 	vertex wv;
 	vertex dr;
 	vertex dw;
@@ -84,6 +87,7 @@ private:
 	void door_inclusion();
 
 	void graph_formation();
+	void special_graph_cell_formation();
 
 public:
 	Coppito();

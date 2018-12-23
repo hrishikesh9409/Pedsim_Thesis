@@ -1,0 +1,4 @@
+door nearness parameter
+	each block is graded according to its nearness parameter, each cell is graded according to nearest next cell. 
+
+ranked probability during runtime 

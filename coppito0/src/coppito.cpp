@@ -53,6 +53,51 @@ void Coppito::print_cells(){
 	//cout << wall_count << endl;
 }
 
+void Coppito::special_graph_cell_formation(){
+
+	//BLOCK 14 : 
+	special_vertices.x = -7.5;
+	special_vertices.y = -60;
+
+	special_cells.push_back(special_vertices);
+	/*----------------------------------------------------------------------------------------------*/
+	special_vertices.x = 7.5;
+	special_vertices.y = -60;
+
+	special_cells.push_back(special_vertices);
+	/*----------------------------------------------------------------------------------------------*/
+
+	special_vertices.x = 7.5;
+	special_vertices.y = -37.5;
+
+	special_cells.push_back(special_vertices);
+	/*----------------------------------------------------------------------------------------------*/
+
+	/*for(int i = 0; i < special_cells.size(); i++){
+		cout << special_cells[i].x << ", " << special_cells[i].y << endl;
+	}*/
+
+	for(int i = 0; i < block.size(); i++){
+		for(int j = 0; j < block[i].size(); j++){
+			for(int k = 0; k < block[i][j].cell_outline.size(); k++){
+				for(int l = 0; l < 4; l++){
+					for(int m = 0; m < special_cells.size(); m++){
+						if((block[i][j].cell_outline[k][l].startx == special_cells[i].x && block[i][j].cell_outline[k][l].starty == special_cells[i].y) || 
+							block[i][j].cell_outline[k][l].endx == special_cells[i].x && block[i][j].cell_outline[k][l].endy == special_cells[i].y){
+							for(int p = 0; p < 8; p++){
+								if(block[i][j].cell_next[p] == 999999){
+									//cout << "HELLO WORLD!\n\n";
+									//block[14][j].cell_next[p] = block[i][j].cell_number;
+								}
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+}
+
 void Coppito::graph_formation(){
 	temp_block = block;
 
@@ -2765,7 +2810,8 @@ void Coppito::divide_Cells(){
 	door_inclusion();
 
 	graph_formation();
+	special_graph_cell_formation();
 
-	print_cells();
+	//print_cells();
 }
 

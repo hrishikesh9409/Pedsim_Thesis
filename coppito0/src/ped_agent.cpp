@@ -310,7 +310,7 @@ Ped::Tvector Ped::Tagent::desiredForce() {
     // Compute force. This translates to "I want to move into that
     // direction at the maximum speed"
     Tvector force = desiredDirection.normalized() * vmax;
-    //    cout << force.to_string() << endl;
+    //cout << force.to_string() << endl;
 
     return force;
 }
@@ -517,6 +517,18 @@ void Ped::Tagent::computeForces() {
 }
 
 
+void Ped::Tagent::exitStrategy(){
+	cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
+	if(getPosition().x <= 50 && getPosition().y >= 35){
+		setPosition(0,0,0);
+	}
+
+	/*if(getid() >= 0  && getid() <= 100){
+		p.x = getPosition().x - 75.0;
+		p.y = getPosition().y - 75.0;
+	}*/
+}
+
 /// Does the agent dynamics stuff. In the current implementation a
 /// simple Euler integration is used. As the first step, the new
 /// position is calculated using t-1 velocity. Then, the new
@@ -562,6 +574,7 @@ void Ped::Tagent::move(double h) {
 
   p = p_desired;  // update my position
 
+  //cout << p.x << " " << p.y << " " << p.z << endl;
   
   // weighted sum of all forces --> acceleration
   a = factordesiredforce * desiredforce
@@ -571,10 +584,22 @@ void Ped::Tagent::move(double h) {
     + myforce;
 
   // calculate the new velocity
-  v = 0.5 * v + a * h; // prob rather (0.5 / h) * v
+  if(getid() >= 0 && getid() <=30){
+  	v = 0.5 * v + a * h; // prob rather (0.5 / h) * v
+  }
+  else if(getid() > 30 && getid() <=50){
+  	v = 0.0000001 * v + a * h;
+  }
+  else if(getid() > 50){
+  	v = 0.25 * v + a * h;
+  }
 
   // don't exceed maximal speed
   if (v.length() > vmax) v = v.normalized() * vmax;
+
+  //cout << getid() << endl;
+
+  exitStrategy();
 
   // notice scene of movement
   scene->moveAgent(this);
