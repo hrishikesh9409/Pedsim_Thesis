@@ -12,15 +12,15 @@ using namespace std;
 /// \date    2012-01-11
 Config::Config() { // make sure this reflects what is set as default in the user interface!  --chgloor 2012-01-13
     guiShowWaypoints = false;
-    simWallForce = 50;
-    simPedForce = 30;
+    simWallForce = 10;
+    simPedForce = 120;
     simSpeed = 1000/30;
     mlTendency = false;
     mlLookAhead = true;
     showForces = true;
     showDirection = true;
     showTree = false;
-    simh = 0.4;
+    simh = 0.5;
     followAgent = true;
 }
 

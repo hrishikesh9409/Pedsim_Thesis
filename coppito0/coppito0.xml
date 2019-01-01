@@ -33,126 +33,536 @@
   <waypoint id="wr" x="0" y="90" r="2" />
 
   <!-- agents GROUP 1-->
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
-  <agent x="30" y="-30" n="1" dx="40" dy="30">
-   <addwaypoint id="wu" />
-   <addwaypoint id="wd" />
-  </agent>
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+<agent x="30" y="-30" n="1" dx="180" dy="50">
+<addwaypoint id="wu" />
+<addwaypoint id="wd" />
+</agent> 
+
+
 
 
   <!-- agents GROUP 1-->
@@ -165,101 +575,7 @@
    <addwaypoint id="wl" />
    <addwaypoint id="wr" />
   </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
-  <agent x="20" y="-10" n="1" dx="40" dy="30">
-   <addwaypoint id="wk" /> 
-   <addwaypoint id="wl" />
-   <addwaypoint id="wr" />
-  </agent>
+
   <!-- agents GROUP 2-->
 
   <!-- agents GROUP 3 -->
@@ -278,291 +594,7 @@
 	 <addwaypoint id="w13" />
 
   </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
-  <agent x="-80" y="-30" n="1" dx="30" dy="0">
-	 <addwaypoint id="w1" />
-	 <addwaypoint id="w2" />
-	 <addwaypoint id="w3" />
-	 <addwaypoint id="w4" />
-	 <addwaypoint id="w5" />
-	 <addwaypoint id="w6" />
-	 <addwaypoint id="w8" />
-	 <addwaypoint id="w9" />
-	 <addwaypoint id="w10" />
-	 <addwaypoint id="w11" />
-	 <addwaypoint id="w72" />
-	 <addwaypoint id="w13" />
-
-  </agent>
+  
 
   <!-- agents GROUP 3 -->
 
@@ -578,96 +610,7 @@
 	 <addwaypoint id="w20" />
    	 <addwaypoint id="w22" />
   </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
-  <agent x="78" y="-50" n="1" dx="30" dy="-30">
-	 <addwaypoint id="w14" />
-	 <addwaypoint id="w15" />
-	 <addwaypoint id="w16" />
-	 <addwaypoint id="w17" />
-	 <addwaypoint id="w18" />
-	 <addwaypoint id="w19" />
-	 <addwaypoint id="w20" />
-   	 <addwaypoint id="w22" />
-  </agent>
+
 
   
   

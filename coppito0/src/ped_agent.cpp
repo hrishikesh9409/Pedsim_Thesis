@@ -17,7 +17,7 @@ using namespace std;
 
 
 default_random_engine generator;
-
+static int i = 0;
 
 /// Default Constructor
 /// \date    2003-12-29
@@ -51,7 +51,7 @@ Ped::Tagent::Tagent() {
 
     obstacleForceSigma = 0.8;
 
-    agentRadius = 0.2;
+    agentRadius = 0.5;
 
     relaxationTime = 0.5; 
     waypointbehavior = BEHAVIOR_ONCE;
@@ -518,9 +518,15 @@ void Ped::Tagent::computeForces() {
 
 
 void Ped::Tagent::exitStrategy(){
-	cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
-	if(getPosition().x <= 50 && getPosition().y >= 35){
-		setPosition(0,0,0);
+	
+	if(getid()>=30 && getid()<=40){
+		// cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
+		 if(getPosition().x < 10 && getPosition().y >= 20 && getPosition().x > 12 && getPosition().y <= 30){
+			//setPosition(120,20,0);
+			i++;
+			cout << i << endl;
+			//v = v * 0.0;
+		}
 	}
 
 	/*if(getid() >= 0  && getid() <= 100){
@@ -584,7 +590,7 @@ void Ped::Tagent::move(double h) {
     + myforce;
 
   // calculate the new velocity
-  if(getid() >= 0 && getid() <=30){
+/*  if(getid() >= 0 && getid() <=30){
   	v = 0.5 * v + a * h; // prob rather (0.5 / h) * v
   }
   else if(getid() > 30 && getid() <=50){
@@ -592,14 +598,16 @@ void Ped::Tagent::move(double h) {
   }
   else if(getid() > 50){
   	v = 0.25 * v + a * h;
-  }
+  }*/
+
+  v = 0.5 * v + a * h; // prob rather (0.5 / h) * v
 
   // don't exceed maximal speed
   if (v.length() > vmax) v = v.normalized() * vmax;
 
   //cout << getid() << endl;
 
-  exitStrategy();
+  //exitStrategy();
 
   // notice scene of movement
   scene->moveAgent(this);
