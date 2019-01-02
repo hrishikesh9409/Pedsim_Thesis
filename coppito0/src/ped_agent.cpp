@@ -519,14 +519,32 @@ void Ped::Tagent::computeForces() {
 
 void Ped::Tagent::exitStrategy(){
 	
-	if(getid()>=30 && getid()<=40){
-		// cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
-		 if(getPosition().x < 10 && getPosition().y >= 20 && getPosition().x > 12 && getPosition().y <= 30){
-			//setPosition(120,20,0);
-			i++;
-			cout << i << endl;
-			//v = v * 0.0;
+	if(getid()>=0 && getid()<=50){
+		//cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
+		if(getPosition().x > 37 && getPosition().y <= -57){
+		 	//cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
+			setPosition(36,-53,0);
 		}
+		// if(getPosition().x >= 36 && getPosition().y <= -53){
+		//  	//cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
+		// 	setPosition(12,-80,0);
+		// }
+		// else if(getPosition().x >= 36 && getPosition().y <= -53){
+		// 	setPosition(15, -95, 0);
+		// }
+		// else if(getPosition().x == 7.5 && getPosition().y == 45){
+		// 	setPosition(5, 45, 0);
+		// }
+	}
+	else if(getid()>=100 && getid()<=120){
+		if(getPosition().x >= 92.5 && getPosition().y >= -28){
+	// 		cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
+	 		setPosition(103, 10, 0);
+		}
+	// 	if(getPosition().x <= -7.5 && getPosition().y <= 0){
+	// 		setPosition(-6,1,0);
+	// 		cout << getid() << ":  " << getPosition().x << ", " << getPosition().y << endl;
+	// 	}
 	}
 
 	/*if(getid() >= 0  && getid() <= 100){
@@ -607,7 +625,7 @@ void Ped::Tagent::move(double h) {
 
   //cout << getid() << endl;
 
-  //exitStrategy();
+  exitStrategy();
 
   // notice scene of movement
   scene->moveAgent(this);
