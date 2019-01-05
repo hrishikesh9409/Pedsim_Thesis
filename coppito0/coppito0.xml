@@ -42,6 +42,19 @@
   <waypoint id="w104" x="-122" y="-34" r="2" />
   <waypoint id="w105" x="-135" y="-30" r="2" />
 
+  <waypoint id="w106" x="53" y="42" r="2" />
+  <waypoint id="w107" x="0" y="40" r="2" />
+
+  <waypoint id="w108" x="-93" y="35" r="2" />
+  <waypoint id="w109" x="-105" y="30" r="2" />
+  <waypoint id="w110" x="-105" y="0" r="2" />
+  <waypoint id="w111" x="-105" y="-33" r="2" />
+  <waypoint id="w112" x="-50" y="35" r="2" />
+  
+  <waypoint id="w113" x="-32" y="-55" r="2" />
+  <waypoint id="w114" x="-7.5" y="-55" r="2" />
+  <waypoint id="w115" x="12" y="-55" r="2" />
+
   <!-- agents GROUP 1-->
   <agent x="30" y="-30" n="1" dx="50" dy="50">
 <addwaypoint id="wu" />
@@ -635,6 +648,49 @@
   </agent>
   <!-- agents GROUP 6 -->
 
+  <!-- agents GROUP 7 -->
+  <agent x="75" y="35" n="30" dx="10" dy="40">
+   <addwaypoint id="w106" />
+   <addwaypoint id="w107" />
+   <addwaypoint id="wk" />
+   <addwaypoint id="wl" />
+   <addwaypoint id="wr" />
+  </agent>
+  <!-- agents GROUP 7 -->
+
+  <!-- agents GROUP 8 -->
+  <agent x="-88" y="20" n="30" dx="10" dy="40">
+   <addwaypoint id="w108" />
+   <addwaypoint id="w109" />
+   <addwaypoint id="w110" />
+   <addwaypoint id="w111" />
+   <addwaypoint id="w104" />
+   <addwaypoint id="w105" />
+  </agent>
+  <!-- agents GROUP 8 -->
+
+  <!-- agents GROUP 9 -->
+  <agent x="-45" y="10" n="30" dx="10" dy="20">
+   <addwaypoint id="w112" />
+   <addwaypoint id="w108" />
+   <addwaypoint id="w109" />
+   <addwaypoint id="w110" />
+   <addwaypoint id="w111" />
+   <addwaypoint id="w104" />
+   <addwaypoint id="w105" />
+  </agent>
+  <!-- agents GROUP 9 -->
+
+  <!-- agents GROUP 10 -->
+  <agent x="-35" y="-75" n="30" dx="10" dy="20">
+   <addwaypoint id="w113" />
+   <addwaypoint id="w114" />
+   <addwaypoint id="w115" />
+   <addwaypoint id="wd" />
+   <addwaypoint id="wz" />
+  </agent>
+  <!-- agents GROUP 10 -->
+
   <!-- walls -->
 
   <!-- TOP SIDE -->
@@ -678,9 +734,9 @@
   <obstacle x1="97.5" y1="-90" x2="97.5" y2="-60" />
 
   <obstacle x1="-120" y1="-60" x2="-104.5" y2="-60" />
-  <obstacle x1="-92.5" y1="-60" x2="-66.25" y2="-60" />
+  <obstacle x1="-89" y1="-60" x2="-66.25" y2="-60" />
   <obstacle x1="-61.25" y1="-60" x2="-52.5" y2="-60" />
-  <obstacle x1="-52.5" y1="-60" x2="-35" y2="-60" />
+  <obstacle x1="-52.5" y1="-60" x2="-38" y2="-60" />
   <obstacle x1="-30" y1="-60" x2="-12.5" y2="-60" />
 
   <obstacle x1="30" y1="-60" x2="38.75" y2="-60" />
@@ -696,7 +752,7 @@
   <obstacle x1="-97.5" y1="-45" x2="-7.5" y2="-45" />
   <obstacle x1="-7.5" y1="-45" x2="-7.5" y2="-15" />
   <obstacle x1="-7.5" y1="-45" x2="-7.5" y2="-8" />
-  <obstacle x1="-97.5" y1="-45" x2="-97.5" y2="30" />
+  <obstacle x1="-97.5" y1="-45" x2="-97.5" y2="28" />
   <obstacle x1="-97.5" y1="0" x2="-7.5" y2="0" />
 
   <obstacle x1="-52.5" y1="-45" x2="-52.5" y2="-8" />
@@ -707,9 +763,9 @@
   <obstacle x1="-7.5" y1="0" x2="-7.5" y2="30" />
 
   <obstacle x1="-7.5" y1="30" x2="-25" y2="30" />
-  <obstacle x1="-30" y1="30" x2="-47.5" y2="30" />
+  <obstacle x1="-30" y1="30" x2="-45" y2="30" />
   <obstacle x1="-52.5" y1="30" x2="-70" y2="30" />
-  <obstacle x1="-75" y1="30" x2="-92.5" y2="30" />
+  <obstacle x1="-75" y1="30" x2="-89" y2="30" />
 
   <obstacle x1="7.5" y1="0" x2="97.5" y2="0" />
   <obstacle x1="7.5" y1="0" x2="7.5" y2="30" />
@@ -733,7 +789,7 @@
   <obstacle x1="-7.5" y1="45" x2="-7.5" y2="75" />
   <obstacle x1="7.5" y1="45" x2="7.5" y2="75" />
   <obstacle x1="30" y1="45" x2="30" y2="75" />
-  <obstacle x1="52.5" y1="40" x2="52.5" y2="75" />
+  <obstacle x1="52.5" y1="45" x2="52.5" y2="75" />
 
   <obstacle x1="52.5" y1="45" x2="35" y2="45" />
   <obstacle x1="30" y1="45" x2="12.5" y2="45" />
@@ -753,6 +809,7 @@
   <obstacle x1="-112.5" y1="45" x2="-112.5" y2="30" />
   <obstacle x1="-112.5" y1="30" x2="-112.5" y2="20" />
   <obstacle x1="-112.5" y1="15" x2="-112.5" y2="0" />
-  <obstacle x1="-112.5" y1="0" x2="-112.5" y2="-25" />
+  <obstacle x1="-112.5" y1="0" x2="-112.5" y2="-20" />
+  <obstacle x1="-112.5" y1="-30" x2="-112.5" y2="-25" />
 
 </welcome>
